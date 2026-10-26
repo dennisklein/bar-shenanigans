@@ -21,6 +21,5 @@ fn main() -> Result<()> {
         viewport: eframe::egui::ViewportBuilder::default().with_inner_size([1280.0, 800.0]),
         ..Default::default()
     };
-    eframe::run_native("Opener browser", options, Box::new(|_| Ok(Box::new(app))))
-        .map_err(|e| anyhow::anyhow!("{e}"))
+    eframe::run_native("Opener browser", options, Box::new(|_| Ok(Box::new(app)))).map_err(|e| anyhow::anyhow!("{e}"))
 }

@@ -29,13 +29,7 @@ impl MapView {
     }
 
     /// Draws the map. Returns the index of a step that the user clicked.
-    pub fn show(
-        &mut self,
-        ui: &mut egui::Ui,
-        opener: &Opener,
-        t: f64,
-        selected: Option<u32>,
-    ) -> Option<u32> {
+    pub fn show(&mut self, ui: &mut egui::Ui, opener: &Opener, t: f64, selected: Option<u32>) -> Option<u32> {
         let (response, painter) = ui.allocate_painter(ui.available_size(), Sense::click_and_drag());
         let rect = response.rect;
         if !self.fitted {
@@ -55,10 +49,7 @@ impl MapView {
         let to_screen = |x: f64, z: f64| rect.min + self.offset + Vec2::new(x as f32, z as f32) * self.scale;
 
         painter.rect_filled(rect, 0.0, ui.visuals().extreme_bg_color);
-        let map_rect = Rect::from_min_max(
-            to_screen(0.0, 0.0),
-            to_screen(opener.map.size.x, opener.map.size.z),
-        );
+        let map_rect = Rect::from_min_max(to_screen(0.0, 0.0), to_screen(opener.map.size.x, opener.map.size.z));
         painter.rect_filled(map_rect, 0.0, ui.visuals().faint_bg_color);
         painter.rect_stroke(map_rect, 0.0, Stroke::new(1.0_f32, Color32::GRAY), StrokeKind::Inside);
 
@@ -116,7 +107,7 @@ impl MapView {
             }
             if let Some(p) = pointer {
                 let d = p.distance(center);
-                if d < half.max_elem() + 6.0 && best_hit.map_or(true, |(bd, _)| d < bd) {
+                if d < half.max_elem() + 6.0 && !matches!(best_hit, Some((bd, _)) if bd <= d) {
                     best_hit = Some((d, step.index));
                 }
             }
@@ -126,9 +117,7 @@ impl MapView {
         }
 
         for b in opener.builders.iter().filter(|b| b.created_s <= t) {
-            let pos = opener
-                .builder_pos_at(b.id, t)
-                .unwrap_or_else(|| builder_rest_pos(opener, b.id, t));
+            let pos = opener.builder_pos_at(b.id, t).unwrap_or_else(|| builder_rest_pos(opener, b.id, t));
             let c = to_screen(pos.x, pos.z);
             painter.circle_filled(c, 5.0, Color32::WHITE);
             painter.circle_stroke(c, 5.0, Stroke::new(1.5_f32, kind_color(unit_kind(opener, &b.unit))));
@@ -147,9 +136,5 @@ impl MapView {
 /// Position of a builder without a track: the build position of its latest
 /// own step, or the start position.
 fn builder_rest_pos(opener: &Opener, id: u32, t: f64) -> opener_format::Pos {
-    opener
-        .steps
-        .iter()
-        .rfind(|s| s.builder_id == id && s.queued_s <= t)
-        .map_or(opener.map.start_pos, |s| s.position)
+    opener.steps.iter().rfind(|s| s.builder_id == id && s.queued_s <= t).map_or(opener.map.start_pos, |s| s.position)
 }

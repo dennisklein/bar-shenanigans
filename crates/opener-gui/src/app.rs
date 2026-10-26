@@ -71,9 +71,7 @@ impl eframe::App for App {
             ui.horizontal(|ui| {
                 ui.label("File:");
                 let edit = ui.add(egui::TextEdit::singleline(&mut self.path_text).desired_width(420.0));
-                if ui.button("Load").clicked()
-                    || (edit.lost_focus() && ui.input(|i| i.key_pressed(egui::Key::Enter)))
-                {
+                if ui.button("Load").clicked() || (edit.lost_focus() && ui.input(|i| i.key_pressed(egui::Key::Enter))) {
                     reload = true;
                 }
                 if let Some(e) = &self.error {
@@ -154,7 +152,13 @@ impl Loaded {
         } else {
             times.filter(|&x| x < t - 1e-6).fold(f64::NEG_INFINITY, f64::max)
         };
-        self.t = if target.is_finite() { target } else if forward { self.end } else { 0.0 };
+        self.t = if target.is_finite() {
+            target
+        } else if forward {
+            self.end
+        } else {
+            0.0
+        };
         self.playing = false;
     }
 
@@ -269,9 +273,8 @@ impl Loaded {
         ui.columns(2, |cols| {
             for (col, PlotSpec { title, stored, income, usage, color }) in cols.iter_mut().zip(plots) {
                 col.label(RichText::new(title).strong());
-                let line = |f: fn(&Sample) -> f64| -> PlotPoints<'_> {
-                    o.samples.iter().map(|s| [s.t_s, f(s)]).collect()
-                };
+                let line =
+                    |f: fn(&Sample) -> f64| -> PlotPoints<'_> { o.samples.iter().map(|s| [s.t_s, f(s)]).collect() };
                 let r = Plot::new(title)
                     .legend(egui_plot::Legend::default())
                     .allow_drag(false)
