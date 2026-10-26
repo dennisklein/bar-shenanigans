@@ -4,4 +4,6 @@
 
 pub mod catalog;
 pub mod configs;
+pub mod plan;
+pub mod search;
 pub mod sim;

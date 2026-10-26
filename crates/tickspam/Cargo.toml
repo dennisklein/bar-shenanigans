@@ -9,4 +9,5 @@ rust-version.workspace = true
 [dependencies]
 anyhow.workspace = true
 bar-data = { path = "../bar-data" }
+mlua.workspace = true
 serde.workspace = true
