@@ -22,11 +22,7 @@ pub struct Limits {
 
 impl Default for Limits {
     fn default() -> Self {
-        Limits {
-            max_labs: 4,
-            max_nanos: 8,
-            max_actions: 40,
-        }
+        Limits { max_labs: 4, max_nanos: 8, max_actions: 40 }
     }
 }
 
@@ -59,12 +55,8 @@ pub fn rollout(sim: &Sim, horizon: u32) -> (u32, f64) {
 }
 
 fn score(s: &Sim) -> f64 {
-    let partial: f64 = s
-        .units
-        .iter()
-        .filter(|u| u.role == Role::Tick && u.being_built)
-        .map(|u| u.progress as f64)
-        .sum();
+    let partial: f64 =
+        s.units.iter().filter(|u| u.role == Role::Tick && u.being_built).map(|u| u.progress as f64).sum();
     // resources left are worth a little: they break ties toward cheaper plans
     let rest = (s.team.energy as f64 / 300.0 + s.team.metal as f64 / 21.0).min(1.0) * 1e-3;
     s.ticks() as f64 + 0.5 * partial.min(0.999) + rest
@@ -95,17 +87,8 @@ pub fn beam(root: &Sim, base: &Base, horizon: u32, width: usize, limits: &Limits
     let mut root = root.clone();
     root.record = false;
     let (t0, s0) = rollout(&root, horizon);
-    let mut best = Found {
-        actions: vec![],
-        ticks: t0,
-        score: s0,
-    };
-    let mut frontier = vec![Node {
-        sim: root,
-        actions: vec![],
-        placer: Placer::default(),
-        open: true,
-    }];
+    let mut best = Found { actions: vec![], ticks: t0, score: s0 };
+    let mut frontier = vec![Node { sim: root, actions: vec![], placer: Placer::default(), open: true }];
 
     for _depth in 0..limits.max_actions {
         let jobs: Vec<(&Node, Action)> = frontier
@@ -123,11 +106,7 @@ pub fn beam(root: &Sim, base: &Base, horizon: u32, width: usize, limits: &Limits
         children.sort_by(|a, b| b.2.total_cmp(&a.2));
         for (node, ticks, score) in &children {
             if *score > best.score {
-                best = Found {
-                    actions: node.actions.clone(),
-                    ticks: *ticks,
-                    score: *score,
-                };
+                best = Found { actions: node.actions.clone(), ticks: *ticks, score: *score };
             }
         }
         children.truncate(width);
@@ -148,11 +127,7 @@ pub fn exhaustive(root: &Sim, base: &Base, horizon: u32, depth: usize, limits: &
             }
             if let Some((child, ticks, score)) = expand(n, a, base, horizon) {
                 if score > best.score {
-                    *best = Found {
-                        actions: child.actions.clone(),
-                        ticks,
-                        score,
-                    };
+                    *best = Found { actions: child.actions.clone(), ticks, score };
                 }
                 rec(&child, base, horizon, depth - 1, limits, best);
             }
@@ -161,35 +136,19 @@ pub fn exhaustive(root: &Sim, base: &Base, horizon: u32, depth: usize, limits: &
     let mut root = root.clone();
     root.record = false;
     let (t0, s0) = rollout(&root, horizon);
-    let mut best = Found {
-        actions: vec![],
-        ticks: t0,
-        score: s0,
-    };
-    let node = Node {
-        sim: root,
-        actions: vec![],
-        placer: Placer::default(),
-        open: true,
-    };
+    let mut best = Found { actions: vec![], ticks: t0, score: s0 };
+    let node = Node { sim: root, actions: vec![], placer: Placer::default(), open: true };
     rec(&node, base, horizon, depth, limits, &mut best);
     best
 }
 
 fn parallel_map<T: Sync, R: Send>(items: &[T], f: impl Fn(&T) -> R + Sync) -> Vec<R> {
-    let threads = std::thread::available_parallelism()
-        .map_or(1, |n| n.get())
-        .min(items.len().max(1));
+    let threads = std::thread::available_parallelism().map_or(1, |n| n.get()).min(items.len().max(1));
     let chunk = items.len().div_ceil(threads).max(1);
     std::thread::scope(|scope| {
-        let handles: Vec<_> = items
-            .chunks(chunk)
-            .map(|c| scope.spawn(|| c.iter().map(&f).collect::<Vec<R>>()))
-            .collect();
-        handles
-            .into_iter()
-            .flat_map(|h| h.join().expect("search thread panicked"))
-            .collect()
+        let handles: Vec<_> =
+            items.chunks(chunk).map(|c| scope.spawn(|| c.iter().map(&f).collect::<Vec<R>>())).collect();
+        handles.into_iter().flat_map(|h| h.join().expect("search thread panicked")).collect()
     })
 }
 
@@ -202,12 +161,8 @@ mod tests {
 
     fn setup() -> (Sim, Base) {
         let start = Pos::new(500.0, 500.0);
-        let spots: Vec<Spot> = (0..4)
-            .map(|i| Spot {
-                pos: Pos::new(560.0 + 90.0 * i as f32, 440.0),
-                metal: 2.0,
-            })
-            .collect();
+        let spots: Vec<Spot> =
+            (0..4).map(|i| Spot { pos: Pos::new(560.0 + 90.0 * i as f32, 440.0), metal: 2.0 }).collect();
         let base = Base::new(start, Pos::new(4096.0, 4096.0), &spots);
         let sim = Sim::new(Catalog::reference(), Rules::default(), start, vec![]);
         (sim, base)
@@ -217,11 +172,7 @@ mod tests {
     fn beam_matches_exhaustive_on_a_short_horizon() {
         let (sim, base) = setup();
         let horizon = 75 * GAME_SPEED;
-        let limits = Limits {
-            max_labs: 2,
-            max_nanos: 2,
-            max_actions: 4,
-        };
+        let limits = Limits { max_labs: 2, max_nanos: 2, max_actions: 4 };
         let ex = exhaustive(&sim, &base, horizon, 4, &limits);
         let bm = beam(&sim, &base, horizon, 64, &limits);
         assert!(ex.ticks > 0);

@@ -168,14 +168,8 @@ struct AssistState {
 #[derive(Debug, Clone)]
 enum CmdState {
     Idle,
-    Approach {
-        arrive: u32,
-        stance_left: u32,
-        order: Order,
-    },
-    Building {
-        target: UnitId,
-    },
+    Approach { arrive: u32, stance_left: u32, order: Order },
+    Building { target: UnitId },
     Assist(AssistState),
 }
 
@@ -314,11 +308,7 @@ impl Sim {
             builder: None,
             metal_extract: 0.0,
             lab_index: None,
-            brain: Brain::Commander(Box::new(Commander {
-                orders,
-                next: 0,
-                state: CmdState::Idle,
-            })),
+            brain: Brain::Commander(Box::new(Commander { orders, next: 0, state: CmdState::Idle })),
         });
         sim
     }
@@ -549,11 +539,7 @@ impl Sim {
             self.labs.push(id);
         }
         if let Some(b) = builder {
-            self.log(Event::Started {
-                frame: self.frame,
-                builder: b,
-                unit: id,
-            });
+            self.log(Event::Started { frame: self.frame, builder: b, unit: id });
         }
         id
     }
@@ -580,10 +566,7 @@ impl Sim {
         if role == Role::Tick {
             self.ticks_done += 1;
         }
-        self.log(Event::Finished {
-            frame: self.frame,
-            unit: id,
-        });
+        self.log(Event::Finished { frame: self.frame, unit: id });
     }
 
     /// `CUnit::AddBuildPower` for construction. Returns true if it built.
@@ -634,12 +617,7 @@ impl Sim {
     fn produce(&mut self, i: UnitId) {
         let role = self.units[i].role;
         let st = self.catalog.get(role);
-        let (mm, em, up, wg) = (
-            st.metal_make,
-            st.energy_make,
-            st.energy_upkeep,
-            st.wind_generator,
-        );
+        let (mm, em, up, wg) = (st.metal_make, st.energy_make, st.energy_upkeep, st.wind_generator);
         let extract = self.units[i].metal_extract;
         if mm > 0.0 || em > 0.0 {
             self.add_resources(mm * 0.5, em * 0.5);
@@ -718,13 +696,7 @@ impl Sim {
             .iter()
             .enumerate()
             .filter(|(_, u)| u.being_built)
-            .map(|(id, u)| {
-                (
-                    id,
-                    u.pos.distance(me.pos),
-                    self.catalog.get(u.role).radius(),
-                )
-            })
+            .map(|(id, u)| (id, u.pos.distance(me.pos), self.catalog.get(u.role).radius()))
             .filter(|&(_, d, r)| d <= range + r)
             .min_by(|a, b| a.1.total_cmp(&b.1))
             .map(|(id, _, _)| id)
@@ -749,11 +721,7 @@ impl Sim {
             if self.units[t].being_built {
                 if a.cur_build != Some(t) {
                     a.cur_build = Some(t);
-                    self.log(Event::AssistStart {
-                        frame: self.frame,
-                        builder: i,
-                        unit: t,
-                    });
+                    self.log(Event::AssistStart { frame: self.frame, builder: i, unit: t });
                 }
                 return;
             }
@@ -764,11 +732,7 @@ impl Sim {
             a.cmd_repair = Some(t);
             if a.mode == AssistMode::Fight {
                 a.cur_build = Some(t);
-                self.log(Event::AssistStart {
-                    frame: self.frame,
-                    builder: i,
-                    unit: t,
-                });
+                self.log(Event::AssistStart { frame: self.frame, builder: i, unit: t });
             }
         }
     }
@@ -778,11 +742,7 @@ impl Sim {
             let p = self.power_per_frame(role);
             if !self.add_build_power(t, p) && !self.units[t].being_built {
                 a.cur_build = None;
-                self.log(Event::AssistStop {
-                    frame: self.frame,
-                    builder: i,
-                    unit: t,
-                });
+                self.log(Event::AssistStop { frame: self.frame, builder: i, unit: t });
             }
         }
     }
@@ -811,11 +771,7 @@ impl Sim {
                     None => return,
                 },
             };
-            self.log(Event::Ordered {
-                frame: f,
-                builder: i,
-                order: c.next,
-            });
+            self.log(Event::Ordered { frame: f, builder: i, order: c.next });
             c.next += 1;
             let range = self.catalog.commander.build_distance + radius;
             let here = self.units[i].pos;
@@ -823,35 +779,16 @@ impl Sim {
             let mut arrive = f;
             if dist > range {
                 let travel = dist - range;
-                let frames =
-                    (travel / (self.catalog.commander.speed / GAME_SPEED as f32)).ceil() as u32;
+                let frames = (travel / (self.catalog.commander.speed / GAME_SPEED as f32)).ceil() as u32;
                 arrive = f + frames;
                 let k = travel / dist;
-                let to = Pos::new(
-                    here.x + (dest.x - here.x) * k,
-                    here.z + (dest.z - here.z) * k,
-                );
+                let to = Pos::new(here.x + (dest.x - here.x) * k, here.z + (dest.z - here.z) * k);
                 self.units[i].pos = to;
-                self.log(Event::Move {
-                    frame: f,
-                    builder: i,
-                    from: here,
-                    to,
-                    arrive,
-                });
+                self.log(Event::Move { frame: f, builder: i, from: here, to, arrive });
             }
-            c.state = CmdState::Approach {
-                arrive,
-                stance_left: self.rules.stance_slow_updates,
-                order,
-            };
+            c.state = CmdState::Approach { arrive, stance_left: self.rules.stance_slow_updates, order };
         }
-        if let CmdState::Approach {
-            arrive,
-            stance_left,
-            order,
-        } = &mut c.state
-        {
+        if let CmdState::Approach { arrive, stance_left, order } = &mut c.state {
             if f < *arrive {
                 return;
             }
@@ -866,12 +803,7 @@ impl Sim {
                     self.assist_su(i, &mut a);
                     c.state = CmdState::Assist(a);
                 }
-                Order::Build {
-                    role,
-                    pos,
-                    metal,
-                    lab,
-                } => {
+                Order::Build { role, pos, metal, lab } => {
                     if *stance_left > 0 {
                         *stance_left -= 1;
                         return;
@@ -889,10 +821,7 @@ mod tests {
     use super::*;
 
     fn lab_setup(labs: usize, nanos_per_lab: usize, mode: AssistMode) -> Sim {
-        let rules = Rules {
-            assist_mode: mode,
-            ..Rules::default()
-        };
+        let rules = Rules { assist_mode: mode, ..Rules::default() };
         let mut sim = Sim::new(Catalog::reference(), rules, Pos::new(0.0, 0.0), vec![]);
         sim.set_unlimited_resources();
         for k in 0..labs {
@@ -922,19 +851,10 @@ mod tests {
         sim.team.energy_storage = 1000.0;
         sim.run_until(60 * GAME_SPEED);
         let used: f32 = sim.samples.iter().map(|s| s.energy_usage).sum();
-        let built: f32 = sim
-            .units
-            .iter()
-            .filter(|u| u.role == Role::Tick)
-            .map(|u| u.progress * 300.0)
-            .sum();
+        let built: f32 = sim.units.iter().filter(|u| u.role == Role::Tick).map(|u| u.progress * 300.0).sum();
         assert!((used - built).abs() < 1.0, "used {used} built {built}");
         // only the commander's 30 E/s: 1800 E in 60 s, 6 ticks at most
-        assert!(
-            sim.ticks() <= 6 && sim.ticks() >= 5,
-            "ticks {}",
-            sim.ticks()
-        );
+        assert!(sim.ticks() <= 6 && sim.ticks() >= 5, "ticks {}", sim.ticks());
     }
 
     #[test]
@@ -943,12 +863,7 @@ mod tests {
         let mut f = lab_setup(1, 4, AssistMode::Fight);
         g.run_until(120 * GAME_SPEED);
         f.run_until(120 * GAME_SPEED);
-        assert!(
-            f.ticks() > g.ticks(),
-            "fight {} guard {}",
-            f.ticks(),
-            g.ticks()
-        );
+        assert!(f.ticks() > g.ticks(), "fight {} guard {}", f.ticks(), g.ticks());
     }
 
     #[test]
@@ -967,25 +882,10 @@ mod tests {
     #[test]
     fn commander_builds_orders_in_sequence() {
         let orders = vec![
-            Order::Build {
-                role: Role::Wind,
-                pos: Pos::new(100.0, 0.0),
-                metal: 0.0,
-                lab: None,
-            },
-            Order::Build {
-                role: Role::Wind,
-                pos: Pos::new(500.0, 0.0),
-                metal: 0.0,
-                lab: None,
-            },
+            Order::Build { role: Role::Wind, pos: Pos::new(100.0, 0.0), metal: 0.0, lab: None },
+            Order::Build { role: Role::Wind, pos: Pos::new(500.0, 0.0), metal: 0.0, lab: None },
         ];
-        let mut sim = Sim::new(
-            Catalog::reference(),
-            Rules::default(),
-            Pos::new(0.0, 0.0),
-            orders,
-        );
+        let mut sim = Sim::new(Catalog::reference(), Rules::default(), Pos::new(0.0, 0.0), orders);
         sim.run_until(30 * GAME_SPEED);
         let winds: Vec<_> = sim.units.iter().filter(|u| u.role == Role::Wind).collect();
         assert_eq!(winds.len(), 2);
@@ -998,22 +898,13 @@ mod tests {
 
     #[test]
     fn mex_needs_energy_upkeep() {
-        let mut sim = Sim::new(
-            Catalog::reference(),
-            Rules::default(),
-            Pos::new(0.0, 0.0),
-            vec![],
-        );
+        let mut sim = Sim::new(Catalog::reference(), Rules::default(), Pos::new(0.0, 0.0), vec![]);
         let m = sim.spawn(Role::Mex, Pos::new(0.0, 0.0), None);
         sim.units[m].metal_extract = 2.0;
         sim.team.energy = 0.0;
         sim.team.metal = 0.0;
         // commander makes 30 E/s, so the mex can pay its 3 E/s
         sim.run_until(10 * GAME_SPEED);
-        assert!(
-            (sim.team.metal - 40.0).abs() < 2.5,
-            "metal {}",
-            sim.team.metal
-        );
+        assert!((sim.team.metal - 40.0).abs() < 2.5, "metal {}", sim.team.metal);
     }
 }

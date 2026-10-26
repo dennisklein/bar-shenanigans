@@ -19,15 +19,7 @@ pub enum Role {
 }
 
 impl Role {
-    pub const ALL: [Role; 7] = [
-        Role::Commander,
-        Role::Lab,
-        Role::Nano,
-        Role::Mex,
-        Role::Wind,
-        Role::Solar,
-        Role::Tick,
-    ];
+    pub const ALL: [Role; 7] = [Role::Commander, Role::Lab, Role::Nano, Role::Mex, Role::Wind, Role::Solar, Role::Tick];
 }
 
 /// Engine-relevant values of one unit def.
@@ -105,9 +97,7 @@ impl Catalog {
     /// Builds the Armada catalog from unit defs that the BAR Lua loader read.
     pub fn from_unit_defs(defs: &bar_data::UnitDefs) -> anyhow::Result<Catalog> {
         let get = |name: &str| -> anyhow::Result<Stats> {
-            let d = defs
-                .get(name)
-                .ok_or_else(|| anyhow::anyhow!("unit def {name} not found"))?;
+            let d = defs.get(name).ok_or_else(|| anyhow::anyhow!("unit def {name} not found"))?;
             Ok(Stats {
                 name: d.name.clone(),
                 human_name: d.human_name.clone(),
@@ -138,8 +128,7 @@ impl Catalog {
             tick: get("armflea")?,
         };
         anyhow::ensure!(
-            defs.get("armlab")
-                .is_some_and(|d| d.build_options.iter().any(|o| o == "armflea")),
+            defs.get("armlab").is_some_and(|d| d.build_options.iter().any(|o| o == "armflea")),
             "armlab cannot build armflea"
         );
         Ok(catalog)
@@ -149,16 +138,7 @@ impl Catalog {
     /// BAR checkout. [`Catalog::from_unit_defs`] is the source of truth.
     pub fn reference() -> Catalog {
         #[allow(clippy::too_many_arguments)]
-        fn s(
-            name: &str,
-            human: &str,
-            m: f32,
-            e: f32,
-            bt: f32,
-            wt: f32,
-            fp: u32,
-            f: impl FnOnce(&mut Stats),
-        ) -> Stats {
+        fn s(name: &str, human: &str, m: f32, e: f32, bt: f32, wt: f32, fp: u32, f: impl FnOnce(&mut Stats)) -> Stats {
             let mut st = Stats {
                 name: name.into(),
                 human_name: human.into(),
@@ -182,70 +162,34 @@ impl Catalog {
             st
         }
         Catalog {
-            commander: s(
-                "armcom",
-                "Armada Commander",
-                2700.0,
-                26000.0,
-                75000.0,
-                300.0,
-                2,
-                |s| {
-                    s.metal_make = 2.0;
-                    s.energy_make = 30.0;
-                    s.metal_storage = 500.0;
-                    s.energy_storage = 500.0;
-                    s.build_distance = 145.0;
-                    s.speed = 37.5;
-                },
-            ),
+            commander: s("armcom", "Armada Commander", 2700.0, 26000.0, 75000.0, 300.0, 2, |s| {
+                s.metal_make = 2.0;
+                s.energy_make = 30.0;
+                s.metal_storage = 500.0;
+                s.energy_storage = 500.0;
+                s.build_distance = 145.0;
+                s.speed = 37.5;
+            }),
             lab: s("armlab", "Bot Lab", 500.0, 950.0, 5000.0, 150.0, 6, |s| {
                 s.metal_storage = 100.0;
                 s.energy_storage = 100.0;
             }),
-            nano: s(
-                "armnanotc",
-                "Construction Turret",
-                230.0,
-                3200.0,
-                5300.0,
-                200.0,
-                3,
-                |s| {
-                    s.build_distance = 400.0;
-                },
-            ),
-            mex: s(
-                "armmex",
-                "Metal Extractor",
-                50.0,
-                500.0,
-                1800.0,
-                0.0,
-                4,
-                |s| {
-                    s.energy_upkeep = 3.0;
-                    s.extracts_metal = 0.001;
-                    s.metal_storage = 50.0;
-                },
-            ),
+            nano: s("armnanotc", "Construction Turret", 230.0, 3200.0, 5300.0, 200.0, 3, |s| {
+                s.build_distance = 400.0;
+            }),
+            mex: s("armmex", "Metal Extractor", 50.0, 500.0, 1800.0, 0.0, 4, |s| {
+                s.energy_upkeep = 3.0;
+                s.extracts_metal = 0.001;
+                s.metal_storage = 50.0;
+            }),
             wind: s("armwin", "Wind Turbine", 40.0, 175.0, 1600.0, 0.0, 3, |s| {
                 s.wind_generator = 25.0;
                 s.energy_storage = 0.5;
             }),
-            solar: s(
-                "armsolar",
-                "Solar Collector",
-                155.0,
-                0.0,
-                2600.0,
-                0.0,
-                5,
-                |s| {
-                    s.energy_upkeep = -20.0;
-                    s.energy_storage = 50.0;
-                },
-            ),
+            solar: s("armsolar", "Solar Collector", 155.0, 0.0, 2600.0, 0.0, 5, |s| {
+                s.energy_upkeep = -20.0;
+                s.energy_storage = 50.0;
+            }),
             tick: s("armflea", "Tick", 21.0, 300.0, 800.0, 0.0, 1, |s| {
                 s.speed = 132.0;
             }),

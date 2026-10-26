@@ -31,11 +31,7 @@ fn reference_catalog_matches_bar_unit_defs() {
             ("energy_storage", a.energy_storage, b.energy_storage),
         ];
         for (field, x, y) in fields {
-            assert!(
-                (x - y).abs() < 1e-4,
-                "{}.{field}: BAR {x}, reference {y}",
-                a.name
-            );
+            assert!((x - y).abs() < 1e-4, "{}.{field}: BAR {x}, reference {y}", a.name);
         }
     }
 }

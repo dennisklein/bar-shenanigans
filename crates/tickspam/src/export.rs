@@ -37,10 +37,7 @@ fn secs(frame: u32) -> f64 {
 /// recording on. `name` names the plan, for example "beam search".
 pub fn opener(scn: &Scenario, sim: &Sim, name: &str) -> of::Opener {
     let horizon = sim.frame;
-    let pos = |p: crate::sim::Pos| of::Pos {
-        x: p.x as f64,
-        z: p.z as f64,
-    };
+    let pos = |p: crate::sim::Pos| of::Pos { x: p.x as f64, z: p.z as f64 };
 
     // one build step per unit, in start order
     struct Raw {
@@ -59,41 +56,15 @@ pub fn opener(scn: &Scenario, sim: &Sim, name: &str) -> of::Opener {
             Event::Ordered { frame, builder, .. } => {
                 last_order.insert(builder, frame);
             }
-            Event::Started {
-                frame,
-                builder,
-                unit,
-            } => {
+            Event::Started { frame, builder, unit } => {
                 let queued = last_order.remove(&builder).unwrap_or(frame);
-                raw.push(Raw {
-                    builder,
-                    unit,
-                    assist: false,
-                    queued,
-                    start: frame,
-                    finish: None,
-                });
+                raw.push(Raw { builder, unit, assist: false, queued, start: frame, finish: None });
             }
-            Event::AssistStart {
-                frame,
-                builder,
-                unit,
-            } => {
+            Event::AssistStart { frame, builder, unit } => {
                 open_assist.insert((builder, unit), raw.len());
-                raw.push(Raw {
-                    builder,
-                    unit,
-                    assist: true,
-                    queued: frame,
-                    start: frame,
-                    finish: None,
-                });
+                raw.push(Raw { builder, unit, assist: true, queued: frame, start: frame, finish: None });
             }
-            Event::AssistStop {
-                frame,
-                builder,
-                unit,
-            } => {
+            Event::AssistStop { frame, builder, unit } => {
                 if let Some(i) = open_assist.remove(&(builder, unit)) {
                     raw[i].finish = Some(frame);
                 }
@@ -111,37 +82,21 @@ pub fn opener(scn: &Scenario, sim: &Sim, name: &str) -> of::Opener {
         }
     }
     raw.sort_by_key(|r| (r.start, r.assist, r.builder));
-    let build_step: HashMap<UnitId, u32> = raw
-        .iter()
-        .enumerate()
-        .filter(|(_, r)| !r.assist)
-        .map(|(i, r)| (r.unit, i as u32))
-        .collect();
+    let build_step: HashMap<UnitId, u32> =
+        raw.iter().enumerate().filter(|(_, r)| !r.assist).map(|(i, r)| (r.unit, i as u32)).collect();
 
     let steps: Vec<of::Step> = raw
         .iter()
         .enumerate()
         .map(|(i, r)| {
             let u = &sim.units[r.unit];
-            let position = if u.role == Role::Tick {
-                sim.units[r.builder].pos
-            } else {
-                u.pos
-            };
+            let position = if u.role == Role::Tick { sim.units[r.builder].pos } else { u.pos };
             of::Step {
                 index: i as u32,
                 builder_id: r.builder as u32,
-                action: if r.assist {
-                    of::Action::Assist
-                } else {
-                    of::Action::Build
-                },
+                action: if r.assist { of::Action::Assist } else { of::Action::Build },
                 unit: scn.catalog.get(u.role).name.clone(),
-                target_step: if r.assist {
-                    build_step.get(&r.unit).copied()
-                } else {
-                    None
-                },
+                target_step: if r.assist { build_step.get(&r.unit).copied() } else { None },
                 position: pos(position),
                 queued_s: secs(r.queued),
                 start_s: secs(r.start),
@@ -172,30 +127,11 @@ pub fn opener(scn: &Scenario, sim: &Sim, name: &str) -> of::Opener {
         }
     }
 
-    let mut waypoints = vec![of::Waypoint {
-        t_s: 0.0,
-        x: scn.start.x as f64,
-        z: scn.start.z as f64,
-    }];
+    let mut waypoints = vec![of::Waypoint { t_s: 0.0, x: scn.start.x as f64, z: scn.start.z as f64 }];
     for e in &sim.events {
-        if let Event::Move {
-            frame,
-            builder: 0,
-            from,
-            to,
-            arrive,
-        } = *e
-        {
-            waypoints.push(of::Waypoint {
-                t_s: secs(frame),
-                x: from.x as f64,
-                z: from.z as f64,
-            });
-            waypoints.push(of::Waypoint {
-                t_s: secs(arrive),
-                x: to.x as f64,
-                z: to.z as f64,
-            });
+        if let Event::Move { frame, builder: 0, from, to, arrive } = *e {
+            waypoints.push(of::Waypoint { t_s: secs(frame), x: from.x as f64, z: from.z as f64 });
+            waypoints.push(of::Waypoint { t_s: secs(arrive), x: to.x as f64, z: to.z as f64 });
         }
     }
 
@@ -210,10 +146,7 @@ pub fn opener(scn: &Scenario, sim: &Sim, name: &str) -> of::Opener {
                     metal_cost: st.metal_cost as f64,
                     energy_cost: st.energy_cost as f64,
                     build_time: st.build_time as f64,
-                    footprint: of::Footprint {
-                        x: st.footprint_x,
-                        z: st.footprint_z,
-                    },
+                    footprint: of::Footprint { x: st.footprint_x, z: st.footprint_z },
                     kind: kind(r),
                 },
             )
@@ -249,25 +182,10 @@ pub fn opener(scn: &Scenario, sim: &Sim, name: &str) -> of::Opener {
         bar_commit: scn.bar_commit.clone(),
         map: of::MapInfo {
             name: map.name.clone(),
-            size: of::Size {
-                x: map.size.x,
-                z: map.size.z,
-            },
+            size: of::Size { x: map.size.x, z: map.size.z },
             start_pos: pos(scn.start),
-            metal_spots: map
-                .metal_spots
-                .iter()
-                .map(|s| of::MetalSpot {
-                    x: s.x,
-                    z: s.z,
-                    metal: s.metal,
-                })
-                .collect(),
-            wind: of::Wind {
-                min: map.wind.min,
-                max: map.wind.max,
-                used: scn.rules.wind as f64,
-            },
+            metal_spots: map.metal_spots.iter().map(|s| of::MetalSpot { x: s.x, z: s.z, metal: s.metal }).collect(),
+            wind: of::Wind { min: map.wind.min, max: map.wind.max, used: scn.rules.wind as f64 },
             tidal: map.tidal,
         },
         faction: "arm".into(),
@@ -281,10 +199,7 @@ pub fn opener(scn: &Scenario, sim: &Sim, name: &str) -> of::Opener {
         builders,
         steps,
         samples,
-        tracks: vec![of::Track {
-            builder_id: 0,
-            waypoints,
-        }],
+        tracks: vec![of::Track { builder_id: 0, waypoints }],
         assumptions,
     }
 }

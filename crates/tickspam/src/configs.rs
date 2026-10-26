@@ -41,16 +41,8 @@ pub struct ConfigResult {
 /// The result is the mean over [`PHASES`] runs. Each run puts a different
 /// number of other units in front of the setup, which shifts the slow
 /// update phases like other players' units do in a real game.
-pub fn measure(
-    catalog: &Catalog,
-    rules: &Rules,
-    labs: usize,
-    nanos: usize,
-    measure_s: u32,
-) -> ConfigResult {
-    let runs: Vec<f32> = (0..PHASES)
-        .map(|p| ticks_per_min(catalog, rules, labs, nanos, measure_s, p))
-        .collect();
+pub fn measure(catalog: &Catalog, rules: &Rules, labs: usize, nanos: usize, measure_s: u32) -> ConfigResult {
+    let runs: Vec<f32> = (0..PHASES).map(|p| ticks_per_min(catalog, rules, labs, nanos, measure_s, p)).collect();
     let per_min = runs.iter().sum::<f32>() / runs.len() as f32;
     let min = runs.iter().copied().fold(f32::INFINITY, f32::min);
     let max = runs.iter().copied().fold(0.0, f32::max);
@@ -67,8 +59,7 @@ pub fn measure(
         ideal_ticks_per_min: ideal,
         efficiency: per_min / ideal,
         metal_cost: labs as f32 * catalog.lab.metal_cost + nanos as f32 * catalog.nano.metal_cost,
-        energy_cost: labs as f32 * catalog.lab.energy_cost
-            + nanos as f32 * catalog.nano.energy_cost,
+        energy_cost: labs as f32 * catalog.lab.energy_cost + nanos as f32 * catalog.nano.energy_cost,
         energy_per_s: per_min / 60.0 * catalog.tick.energy_cost,
     }
 }
@@ -76,20 +67,8 @@ pub fn measure(
 /// Number of slow update phase offsets that [`measure`] averages over.
 pub const PHASES: usize = 15;
 
-fn ticks_per_min(
-    catalog: &Catalog,
-    rules: &Rules,
-    labs: usize,
-    nanos: usize,
-    measure_s: u32,
-    padding: usize,
-) -> f32 {
-    let mut sim = Sim::new(
-        catalog.clone(),
-        rules.clone(),
-        Pos::new(0.0, -300.0),
-        vec![],
-    );
+fn ticks_per_min(catalog: &Catalog, rules: &Rules, labs: usize, nanos: usize, measure_s: u32, padding: usize) -> f32 {
+    let mut sim = Sim::new(catalog.clone(), rules.clone(), Pos::new(0.0, -300.0), vec![]);
     sim.record = false;
     sim.set_unlimited_resources();
     sim.pad_units(padding);
@@ -111,13 +90,7 @@ fn ticks_per_min(
 }
 
 /// All configurations with `1..=max_labs` labs and `0..=max_nanos` nanos.
-pub fn table(
-    catalog: &Catalog,
-    rules: &Rules,
-    max_labs: usize,
-    max_nanos: usize,
-    measure_s: u32,
-) -> Vec<ConfigResult> {
+pub fn table(catalog: &Catalog, rules: &Rules, max_labs: usize, max_nanos: usize, measure_s: u32) -> Vec<ConfigResult> {
     let mut out = Vec::new();
     for labs in 1..=max_labs {
         for nanos in 0..=max_nanos {
@@ -130,14 +103,11 @@ pub fn table(
 /// The cheapest configuration (in metal + energy / 60, a common BAR rule
 /// of thumb) that makes at least `ticks_per_min`.
 pub fn cheapest_for_rate(results: &[ConfigResult], ticks_per_min: f32) -> Option<&ConfigResult> {
-    results
-        .iter()
-        .filter(|r| r.ticks_per_min >= ticks_per_min)
-        .min_by(|a, b| {
-            let ca = a.metal_cost + a.energy_cost / 60.0;
-            let cb = b.metal_cost + b.energy_cost / 60.0;
-            ca.total_cmp(&cb)
-        })
+    results.iter().filter(|r| r.ticks_per_min >= ticks_per_min).min_by(|a, b| {
+        let ca = a.metal_cost + a.energy_cost / 60.0;
+        let cb = b.metal_cost + b.energy_cost / 60.0;
+        ca.total_cmp(&cb)
+    })
 }
 
 #[cfg(test)]
@@ -158,9 +128,6 @@ mod tests {
         let two_labs = measure(&c, &rules, 2, 0, 120);
         let lab_nano = measure(&c, &rules, 1, 1, 120);
         // 300 vs 350 build power, but the nano joins each Tick late
-        assert!(
-            two_labs.ticks_per_min > lab_nano.ticks_per_min,
-            "{two_labs:?} {lab_nano:?}"
-        );
+        assert!(two_labs.ticks_per_min > lab_nano.ticks_per_min, "{two_labs:?} {lab_nano:?}");
     }
 }

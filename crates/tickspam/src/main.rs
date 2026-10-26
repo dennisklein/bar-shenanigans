@@ -31,42 +31,28 @@ struct Args {
 impl Args {
     fn parse() -> Result<Args> {
         let mut it = std::env::args().skip(1);
-        let Some(cmd) = it.next() else {
-            bail!("{USAGE}")
-        };
+        let Some(cmd) = it.next() else { bail!("{USAGE}") };
         let mut opts = Vec::new();
         while let Some(k) = it.next() {
-            let Some(name) = k.strip_prefix("--") else {
-                bail!("unexpected argument {k}\n{USAGE}")
-            };
-            let v = it
-                .next()
-                .with_context(|| format!("--{name} needs a value"))?;
+            let Some(name) = k.strip_prefix("--") else { bail!("unexpected argument {k}\n{USAGE}") };
+            let v = it.next().with_context(|| format!("--{name} needs a value"))?;
             opts.push((name.to_string(), v));
         }
         Ok(Args { cmd, opts })
     }
 
     fn get(&self, name: &str) -> Option<&str> {
-        self.opts
-            .iter()
-            .rev()
-            .find(|(k, _)| k == name)
-            .map(|(_, v)| v.as_str())
+        self.opts.iter().rev().find(|(k, _)| k == name).map(|(_, v)| v.as_str())
     }
 
     fn path(&self, name: &str) -> Result<PathBuf> {
-        self.get(name)
-            .map(PathBuf::from)
-            .with_context(|| format!("--{name} is required\n{USAGE}"))
+        self.get(name).map(PathBuf::from).with_context(|| format!("--{name} is required\n{USAGE}"))
     }
 
     fn num<T: std::str::FromStr>(&self, name: &str, default: T) -> Result<T> {
         match self.get(name) {
             None => Ok(default),
-            Some(v) => v
-                .parse()
-                .map_err(|_| anyhow::anyhow!("--{name}: bad number {v}")),
+            Some(v) => v.parse().map_err(|_| anyhow::anyhow!("--{name}: bad number {v}")),
         }
     }
 
@@ -76,10 +62,7 @@ impl Args {
             "guard" => AssistMode::Guard,
             m => bail!("--mode: expected fight or guard, got {m}"),
         };
-        Ok(Rules {
-            assist_mode: mode,
-            ..Rules::default()
-        })
+        Ok(Rules { assist_mode: mode, ..Rules::default() })
     }
 
     fn scenario(&self) -> Result<Scenario> {
@@ -108,13 +91,8 @@ fn cmd_configs(args: &Args) -> Result<()> {
         None => Catalog::reference(),
     };
     let rules = args.rules()?;
-    let results = configs::table(
-        &catalog,
-        &rules,
-        args.num("labs", 4)?,
-        args.num("nanos", 8)?,
-        args.num("seconds", 180)?,
-    );
+    let results =
+        configs::table(&catalog, &rules, args.num("labs", 4)?, args.num("nanos", 8)?, args.num("seconds", 180)?);
     println!(
         "assist mode {:?}; resources unlimited; mean over {} slow update phases",
         rules.assist_mode,
@@ -162,16 +140,10 @@ fn write_opener(
 fn cmd_search(args: &Args) -> Result<()> {
     let scn = args.scenario()?;
     let horizon = args.num::<u32>("horizon", 180)? * GAME_SPEED;
-    let limits = Limits {
-        max_labs: args.num("max-labs", 4)?,
-        max_nanos: args.num("max-nanos", 8)?,
-        ..Limits::default()
-    };
+    let limits =
+        Limits { max_labs: args.num("max-labs", 4)?, max_nanos: args.num("max-nanos", 8)?, ..Limits::default() };
     let width = args.num("width", 128)?;
-    eprintln!(
-        "map {}, start {:?}, wind {:.2} E/s per turbine",
-        scn.map.name, scn.start, scn.rules.wind
-    );
+    eprintln!("map {}, start {:?}, wind {:.2} E/s per turbine", scn.map.name, scn.start, scn.rules.wind);
     let t = std::time::Instant::now();
     let found = search::beam(&scn.sim(vec![]), &scn.base, horizon, width, &limits);
     eprintln!("searched in {:.1} s", t.elapsed().as_secs_f32());
@@ -186,12 +158,7 @@ fn cmd_replay(args: &Args) -> Result<()> {
     let plan = Plan::load(&args.path("plan")?)?;
     let horizon = args.num::<u32>("horizon", 180)? * GAME_SPEED;
     let ticks = write_opener(args, &scn, &plan.actions, &plan.name, horizon)?;
-    println!(
-        "{}: {} Ticks at {} s",
-        plan.name,
-        ticks,
-        horizon / GAME_SPEED
-    );
+    println!("{}: {} Ticks at {} s", plan.name, ticks, horizon / GAME_SPEED);
     println!("build: {}", plan.summary());
     Ok(())
 }
