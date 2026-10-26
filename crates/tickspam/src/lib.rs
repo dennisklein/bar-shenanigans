@@ -4,6 +4,8 @@
 
 pub mod catalog;
 pub mod configs;
+pub mod export;
 pub mod plan;
+pub mod scenario;
 pub mod search;
 pub mod sim;

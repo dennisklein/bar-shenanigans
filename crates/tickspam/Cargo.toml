@@ -10,4 +10,6 @@ rust-version.workspace = true
 anyhow.workspace = true
 bar-data = { path = "../bar-data" }
 mlua.workspace = true
+opener-format = { path = "../opener-format" }
 serde.workspace = true
+serde_json.workspace = true

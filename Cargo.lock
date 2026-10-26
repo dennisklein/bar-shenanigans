@@ -2579,7 +2579,9 @@ dependencies = [
  "anyhow",
  "bar-data",
  "mlua",
+ "opener-format",
  "serde",
+ "serde_json",
 ]
 
 [[package]]
