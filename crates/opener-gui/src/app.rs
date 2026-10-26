@@ -194,6 +194,7 @@ impl Loaded {
                         StepState::Walking => Color32::LIGHT_BLUE,
                         StepState::Building => Color32::YELLOW,
                         StepState::Done => ui.visuals().text_color(),
+                        StepState::Unfinished => Color32::LIGHT_RED,
                     };
                     let kind = unit_kind(&self.opener, &step.unit);
                     let name = unit_name(&self.opener, &step.unit);

@@ -98,10 +98,14 @@ impl MapView {
                     painter.rect_stroke(r, 0.0, Stroke::new(1.5_f32, base), StrokeKind::Inside);
                 }
                 StepState::Building => {
-                    let f = ((t - step.start_s) / (step.finish_s - step.start_s).max(1e-6)) as f32;
+                    let f = ((t - step.start_s) / (step.finish_s - step.start_s).max(1e-6)).min(1.0) as f32;
                     painter.rect_filled(r, 0.0, base.gamma_multiply(0.25));
                     let fill = Rect::from_min_max(Pos2::new(r.min.x, r.max.y - r.height() * f), r.max);
                     painter.rect_filled(fill, 0.0, base);
+                }
+                StepState::Unfinished => {
+                    painter.rect_filled(r, 0.0, base.gamma_multiply(0.25));
+                    painter.rect_stroke(r, 0.0, Stroke::new(2.0_f32, Color32::LIGHT_RED), StrokeKind::Inside);
                 }
                 StepState::Done => {
                     painter.rect_filled(r, 0.0, base);
