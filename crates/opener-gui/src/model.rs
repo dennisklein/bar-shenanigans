@@ -11,11 +11,17 @@ pub enum StepState {
     Walking,
     Building,
     Done,
+    /// Still under construction at the horizon.
+    Unfinished,
 }
 
 pub fn step_state(step: &Step, t: f64) -> StepState {
     if t >= step.finish_s {
-        StepState::Done
+        if step.complete {
+            StepState::Done
+        } else {
+            StepState::Unfinished
+        }
     } else if t >= step.start_s {
         StepState::Building
     } else if t >= step.queued_s {
