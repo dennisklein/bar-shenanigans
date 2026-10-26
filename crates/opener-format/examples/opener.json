@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "generator": "hand-written example",
+  "bar_commit": null,
+  "map": {
+    "name": "All That Glitters v2.2.3",
+    "size": { "x": 6144.0, "z": 10240.0 },
+    "start_pos": { "x": 668.0, "z": 755.0 },
+    "metal_spots": [
+      { "x": 600.0, "z": 680.0, "metal": 2.0 },
+      { "x": 760.0, "z": 690.0, "metal": 2.0 }
+    ],
+    "wind": { "min": 0.0, "max": 20.0, "used": 10.0 },
+    "tidal": 0.0
+  },
+  "faction": "arm",
+  "objective": {
+    "kind": "max_eco",
+    "horizon_s": 60.0,
+    "score": 4.5,
+    "description": "Metal income plus energy income / 60 at the horizon."
+  },
+  "units": {
+    "armcom": {
+      "human_name": "Armada Commander", "metal_cost": 2700.0, "energy_cost": 26000.0,
+      "build_time": 75000.0, "footprint": { "x": 3, "z": 3 }, "kind": "commander"
+    },
+    "armmex": {
+      "human_name": "Metal Extractor", "metal_cost": 50.0, "energy_cost": 500.0,
+      "build_time": 1800.0, "footprint": { "x": 3, "z": 3 }, "kind": "metal_extractor"
+    }
+  },
+  "builders": [
+    { "id": 0, "unit": "armcom", "created_s": 0.0, "created_by_step": null, "build_power": 300.0 }
+  ],
+  "steps": [
+    {
+      "index": 0, "builder_id": 0, "action": "build", "unit": "armmex", "target_step": null,
+      "position": { "x": 600.0, "z": 680.0 }, "queued_s": 0.0, "start_s": 0.0, "finish_s": 6.0
+    },
+    {
+      "index": 1, "builder_id": 0, "action": "build", "unit": "armmex", "target_step": null,
+      "position": { "x": 760.0, "z": 690.0 }, "queued_s": 6.0, "start_s": 8.0, "finish_s": 14.0
+    }
+  ],
+  "samples": [
+    { "t_s": 0.0, "metal": 1000.0, "energy": 1000.0, "metal_storage": 1000.0, "energy_storage": 1000.0,
+      "metal_income": 0.0, "energy_income": 30.0, "metal_usage": 8.33, "energy_usage": 83.3,
+      "metal_wasted": 0.0, "energy_wasted": 0.0, "build_power": 300.0, "build_power_used": 300.0 },
+    { "t_s": 7.0, "metal": 950.0, "energy": 530.0, "metal_storage": 1050.0, "energy_storage": 1000.0,
+      "metal_income": 2.0, "energy_income": 30.0, "metal_usage": 0.0, "energy_usage": 0.0,
+      "metal_wasted": 0.0, "energy_wasted": 0.0, "build_power": 300.0, "build_power_used": 0.0 },
+    { "t_s": 14.0, "metal": 914.0, "energy": 240.0, "metal_storage": 1100.0, "energy_storage": 1000.0,
+      "metal_income": 4.0, "energy_income": 30.0, "metal_usage": 0.0, "energy_usage": 0.0,
+      "metal_wasted": 0.0, "energy_wasted": 0.0, "build_power": 300.0, "build_power_used": 0.0 }
+  ],
+  "tracks": [
+    { "builder_id": 0, "waypoints": [
+      { "t_s": 0.0, "x": 668.0, "z": 755.0 },
+      { "t_s": 2.0, "x": 640.0, "z": 720.0 },
+      { "t_s": 6.0, "x": 640.0, "z": 720.0 },
+      { "t_s": 8.0, "x": 700.0, "z": 720.0 }
+    ] }
+  ],
+  "assumptions": ["Hand-written example, not a simulation result."]
+}
