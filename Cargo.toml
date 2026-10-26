@@ -9,6 +9,6 @@ rust-version = "1.80"
 
 [workspace.dependencies]
 anyhow = "1"
-mlua = { version = "0.10", features = ["lua51", "vendored"] }
+mlua = { version = "0.10", features = ["lua51", "vendored", "error-send", "serialize"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"

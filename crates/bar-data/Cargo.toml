@@ -1,0 +1,13 @@
+[package]
+name = "bar-data"
+version = "0.1.0"
+description = "Load Beyond-All-Reason unit defs and map specs through Lua"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+mlua.workspace = true
+serde.workspace = true
+serde_json.workspace = true
