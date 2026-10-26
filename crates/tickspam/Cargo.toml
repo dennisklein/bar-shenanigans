@@ -1,0 +1,12 @@
+[package]
+name = "tickspam"
+version = "0.1.0"
+description = "Tick spam simulator and search for Beyond All Reason"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+bar-data = { path = "../bar-data" }
+serde.workspace = true

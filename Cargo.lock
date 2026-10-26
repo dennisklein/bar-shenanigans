@@ -2573,6 +2573,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "tickspam"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "bar-data",
+ "serde",
+]
+
+[[package]]
 name = "tiff"
 version = "0.11.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
