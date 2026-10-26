@@ -66,8 +66,7 @@ pub struct Spot {
 
 impl MapSpec {
     pub fn load(path: &Path) -> Result<Self> {
-        let text = std::fs::read_to_string(path)
-            .with_context(|| format!("cannot read map spec {}", path.display()))?;
+        let text = std::fs::read_to_string(path).with_context(|| format!("cannot read map spec {}", path.display()))?;
         Self::from_lua(&text, &path.display().to_string())
     }
 
@@ -78,8 +77,7 @@ impl MapSpec {
             .set_name(format!("@{chunk_name}"))
             .eval()
             .map_err(|e| anyhow!("map spec {chunk_name}: {e}"))?;
-        let spec: MapSpec =
-            lua.from_value(value).map_err(|e| anyhow!("map spec {chunk_name}: {e}"))?;
+        let spec: MapSpec = lua.from_value(value).map_err(|e| anyhow!("map spec {chunk_name}: {e}"))?;
         spec.validate()?;
         Ok(spec)
     }

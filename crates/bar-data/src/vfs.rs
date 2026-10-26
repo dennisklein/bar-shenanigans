@@ -17,8 +17,7 @@ pub struct Vfs {
 impl Vfs {
     pub fn new(root: &Path) -> Result<Self> {
         let mut vfs = Vfs { files: BTreeMap::new(), dirs: BTreeMap::new() };
-        vfs.scan(root, "")
-            .with_context(|| format!("cannot read BAR repository at {}", root.display()))?;
+        vfs.scan(root, "").with_context(|| format!("cannot read BAR repository at {}", root.display()))?;
         Ok(vfs)
     }
 

@@ -111,8 +111,7 @@ impl UnitDefs {
             let mut defs = BTreeMap::new();
             for pair in table.pairs::<String, Table>() {
                 let (name, t) = pair?;
-                let def = convert(&name, &t, &names)
-                    .with_context(|| format!("unit def {name}"))?;
+                let def = convert(&name, &t, &names).with_context(|| format!("unit def {name}"))?;
                 defs.insert(name, def);
             }
             let warnings: Vec<String> = lua.globals().get::<Vec<String>>("__bar_warnings")?;
@@ -138,11 +137,7 @@ impl UnitDefs {
 
     /// Builds unit defs from a list, for tests and synthetic data.
     pub fn from_defs(defs: impl IntoIterator<Item = UnitDef>) -> Self {
-        UnitDefs {
-            defs: defs.into_iter().map(|d| (d.name.clone(), d)).collect(),
-            commit: None,
-            warnings: Vec::new(),
-        }
+        UnitDefs { defs: defs.into_iter().map(|d| (d.name.clone(), d)).collect(), commit: None, warnings: Vec::new() }
     }
 }
 
@@ -155,9 +150,7 @@ fn install_host(lua: &Lua, vfs: Rc<Vfs>) -> Result<()> {
     let v = vfs.clone();
     g.set(
         "__bar_dirlist",
-        lua.create_function(move |_, (d, pat, rec): (String, String, bool)| {
-            Ok(v.dir_list(&d, &pat, rec))
-        })?,
+        lua.create_function(move |_, (d, pat, rec): (String, String, bool)| Ok(v.dir_list(&d, &pat, rec)))?,
     )?;
     let v = vfs;
     g.set("__bar_subdirs", lua.create_function(move |_, d: String| Ok(v.sub_dirs(&d)))?)?;
@@ -172,19 +165,12 @@ fn load_names(vfs: &Vfs) -> BTreeMap<String, String> {
     let Ok(json) = serde_json::from_str::<serde_json::Value>(&text) else { return BTreeMap::new() };
     json["units"]["names"]
         .as_object()
-        .map(|m| {
-            m.iter().filter_map(|(k, v)| Some((k.clone(), v.as_str()?.to_owned()))).collect()
-        })
+        .map(|m| m.iter().filter_map(|(k, v)| Some((k.clone(), v.as_str()?.to_owned()))).collect())
         .unwrap_or_default()
 }
 
 fn git_commit(root: &Path) -> Option<String> {
-    let out = std::process::Command::new("git")
-        .arg("-C")
-        .arg(root)
-        .args(["rev-parse", "HEAD"])
-        .output()
-        .ok()?;
+    let out = std::process::Command::new("git").arg("-C").arg(root).args(["rev-parse", "HEAD"]).output().ok()?;
     out.status.success().then(|| String::from_utf8_lossy(&out.stdout).trim().to_owned())
 }
 
