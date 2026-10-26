@@ -3,4 +3,5 @@
 //! given time.
 
 pub mod catalog;
+pub mod configs;
 pub mod sim;
