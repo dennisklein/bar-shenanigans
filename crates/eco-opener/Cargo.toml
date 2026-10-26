@@ -1,0 +1,15 @@
+[package]
+name = "eco-opener"
+version = "0.1.0"
+description = "Simulate Beyond-All-Reason economy openers and search for the best one"
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+anyhow.workspace = true
+bar-data = { path = "../bar-data" }
+mlua.workspace = true
+opener-format = { path = "../opener-format" }
+serde.workspace = true
+serde_json.workspace = true
