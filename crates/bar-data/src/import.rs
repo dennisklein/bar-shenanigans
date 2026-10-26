@@ -22,6 +22,8 @@ use crate::vfs::Vfs;
 /// Files of a map archive, by lower-case path.
 pub struct MapArchive {
     files: BTreeMap<String, Vec<u8>>,
+    /// Lower-case paths of all files, also the ones that are not read.
+    names: Vec<String>,
     pub source: String,
 }
 
@@ -29,25 +31,22 @@ impl MapArchive {
     pub fn open(path: &Path) -> Result<Self> {
         let source = path.file_name().map_or_else(|| path.display().to_string(), |n| n.to_string_lossy().into_owned());
         let mut files = BTreeMap::new();
+        let mut names = Vec::new();
         if path.is_dir() {
-            collect_dir(path, "", &mut files)?;
+            collect_dir(path, "", &mut files, &mut names)?;
         } else {
             let mut reader = sevenz_rust2::ArchiveReader::open(path, sevenz_rust2::Password::empty())
                 .map_err(|e| anyhow!("cannot open map archive {}: {e}", path.display()))?;
-            let names: Vec<String> = reader
-                .archive()
-                .files
-                .iter()
-                .filter(|e| !e.is_directory())
-                .map(|e| e.name().to_owned())
-                .filter(|n| wanted(n))
-                .collect();
-            for n in names {
+            let all: Vec<String> =
+                reader.archive().files.iter().filter(|e| !e.is_directory()).map(|e| e.name().to_owned()).collect();
+            names = all.iter().map(|n| n.replace('\\', "/").to_lowercase()).collect();
+            for n in all.into_iter().filter(|n| wanted(n)) {
                 let data = reader.read_file(&n).map_err(|e| anyhow!("{}: {n}: {e}", path.display()))?;
                 files.insert(n.replace('\\', "/").to_lowercase(), data);
             }
         }
-        Ok(MapArchive { files, source })
+        names.sort();
+        Ok(MapArchive { files, names, source })
     }
 
     pub fn get(&self, name: &str) -> Option<&[u8]> {
@@ -69,14 +68,17 @@ fn wanted(name: &str) -> bool {
     n.ends_with(".smf") || n.ends_with(".lua")
 }
 
-fn collect_dir(dir: &Path, rel: &str, out: &mut BTreeMap<String, Vec<u8>>) -> Result<()> {
+fn collect_dir(dir: &Path, rel: &str, out: &mut BTreeMap<String, Vec<u8>>, names: &mut Vec<String>) -> Result<()> {
     for entry in std::fs::read_dir(dir)? {
         let entry = entry?;
         let name = format!("{rel}{}", entry.file_name().to_string_lossy());
         if entry.file_type()?.is_dir() {
-            collect_dir(&entry.path(), &format!("{name}/"), out)?;
-        } else if wanted(&name) {
-            out.insert(name.to_lowercase(), std::fs::read(entry.path())?);
+            collect_dir(&entry.path(), &format!("{name}/"), out, names)?;
+        } else {
+            names.push(name.to_lowercase());
+            if wanted(&name) {
+                out.insert(name.to_lowercase(), std::fs::read(entry.path())?);
+            }
         }
     }
     Ok(())
@@ -184,12 +186,52 @@ fn install_map_vfs(lua: &Lua, archive: &MapArchive) -> Result<()> {
         }
     }
     lua.globals().set("__map_files", files)?;
+    lua.globals().set("__map_names", archive.names.clone())?;
     lua.load(
         r#"
-        local files = __map_files
-        __map_files = nil
-        VFS = { MAP = "m", MOD = "M", BASE = "b", ZIP = "Mmb", RAW = "r" }
-        function VFS.FileExists(p) return files[p:lower()] ~= nil end
+        local files, names = __map_files, __map_names
+        __map_files, __map_names = nil, nil
+        local exists = {}
+        for _, n in ipairs(names) do exists[n] = true end
+        -- Unknown engine functions do nothing and return nil.
+        local function lenient(t)
+            return setmetatable(t, { __index = function() return function() end end })
+        end
+        local function dir_prefix(dir)
+            dir = (dir or ""):lower():gsub("\\", "/")
+            if dir ~= "" and dir:sub(-1) ~= "/" then dir = dir .. "/" end
+            return dir
+        end
+        local function glob(pattern)
+            local p = (pattern or "*"):lower():gsub("[%^%$%(%)%%%.%[%]%+%-]", "%%%0"):gsub("%*", ".*"):gsub("%?", ".")
+            return "^" .. p .. "$"
+        end
+        VFS = lenient({ MAP = "m", MOD = "M", BASE = "b", ZIP = "Mmb", RAW = "r" })
+        function VFS.DirList(dir, pattern, _mode, recursive)
+            local prefix, pat, out = dir_prefix(dir), glob(pattern), {}
+            for _, n in ipairs(names) do
+                if n:sub(1, #prefix) == prefix then
+                    local rest = n:sub(#prefix + 1)
+                    local file = rest:match("[^/]+$")
+                    if (recursive or not rest:find("/")) and file:match(pat) then
+                        out[#out + 1] = n
+                    end
+                end
+            end
+            return out
+        end
+        function VFS.SubDirs(dir)
+            local prefix, seen, out = dir_prefix(dir), {}, {}
+            for _, n in ipairs(names) do
+                local sub = n:sub(1, #prefix) == prefix and n:sub(#prefix + 1):match("^([^/]+)/")
+                if sub and not seen[sub] then
+                    seen[sub] = true
+                    out[#out + 1] = prefix .. sub .. "/"
+                end
+            end
+            return out
+        end
+        function VFS.FileExists(p) return exists[(p:lower():gsub("\\", "/"))] or false end
         function VFS.LoadFile(p) return files[p:lower()] end
         function VFS.Include(p, env)
             local src = files[p:lower()]
@@ -198,12 +240,10 @@ fn install_map_vfs(lua: &Lua, archive: &MapArchive) -> Result<()> {
             setfenv(f, env or _G)
             return f()
         end
-        Spring = {
+        Spring = lenient({
             GetMapOptions = function() return {} end,
             GetModOptions = function() return {} end,
-            Echo = function() end,
-            Log = function() end,
-        }
+        })
         Game = { version = "bar-data" }
         function __lowerkeys(t)
             local n = {}
@@ -224,7 +264,8 @@ fn install_map_vfs(lua: &Lua, archive: &MapArchive) -> Result<()> {
 /// Runs BAR's metal spot finder on a metal map.
 ///
 /// `metal[z * width + x]` is the metal amount of metal square (x, z), as
-/// `Spring.GetMetalAmount` returns it (raw value * max metal / 255).
+/// `Spring.GetMetalAmount` returns it: raw byte * max metal (Recoil
+/// `CMetalMap`, scaled by `mapinfo.maxMetal`, not divided by 255).
 pub fn find_metal_spots(
     bar_root: &Path,
     size: Xz,
@@ -318,7 +359,7 @@ fn paint_layout(archive: &MapArchive, size: Xz, max_metal: f64, metal: &mut [f64
                 if x > 0 && x < wx && z > 0 && z < wz {
                     // Spring.SetMetalAmount stores a raw value; reading it back scales by max metal.
                     let raw = (m * factor * 255.0).clamp(0.0, 255.0).floor();
-                    metal[z as usize * width + x as usize] = raw * max_metal / 255.0;
+                    metal[z as usize * width + x as usize] = raw * max_metal;
                 }
             }
         }
@@ -334,7 +375,7 @@ pub fn import_map(archive_path: &Path, bar_root: &Path) -> Result<MapSpec> {
     let smf = Smf::parse(smf_data).with_context(|| smf_name.to_owned())?;
     let size = smf.size();
     let width = smf.squares_x / 2;
-    let mut metal: Vec<f64> = smf.metal.iter().map(|&r| r as f64 * info.max_metal / 255.0).collect();
+    let mut metal: Vec<f64> = smf.metal.iter().map(|&r| r as f64 * info.max_metal).collect();
     if metal.iter().all(|&m| m == 0.0) {
         paint_layout(&archive, size, info.max_metal, &mut metal, width)?;
     }

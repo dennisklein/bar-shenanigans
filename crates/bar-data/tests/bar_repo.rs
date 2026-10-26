@@ -71,6 +71,9 @@ fn imports_extracted_map_directory() {
     };
     let dir = std::env::temp_dir().join(format!("bar-data-map-{}", std::process::id()));
     std::fs::create_dir_all(dir.join("maps")).unwrap();
+    std::fs::create_dir_all(dir.join("mapconfig")).unwrap();
+    std::fs::write(dir.join("mapconfig/extra.lua"), "return 1").unwrap();
+    std::fs::write(dir.join("mapconfig/texture.dds"), "x").unwrap();
     std::fs::write(
         dir.join("mapinfo.lua"),
         r#"
@@ -81,6 +84,14 @@ fn imports_extracted_map_directory() {
             teams = { [0] = { startPos = { x = 100, z = 120 } }, [1] = { startPos = { x = 900, z = 880 } } },
         }
         if Spring.GetMapOptions then local _ = Spring.GetMapOptions() end
+        -- Calls that real mapinfo.lua files make.
+        local configs = VFS.DirList("mapconfig/", "*.lua")
+        assert(#configs == 1 and configs[1] == "mapconfig/extra.lua", tostring(configs[1]))
+        assert(#VFS.DirList("mapconfig") == 2 and #VFS.DirList("", "*.lua", nil, true) == 2)
+        assert(VFS.SubDirs("")[1] == "mapconfig/" or VFS.SubDirs("")[2] == "mapconfig/")
+        assert(VFS.FileExists("mapconfig/texture.dds") and not VFS.FileExists("nope.lua"))
+        mapinfo.extra = VFS.Include("mapconfig/extra.lua")
+        Spring.SomethingUnknown(1, 2)
         local function lowerkeys(t)
             local n = {}
             for k, v in pairs(t) do
@@ -104,7 +115,7 @@ fn imports_extracted_map_directory() {
     let mut metal = vec![0u8; w * w];
     for dz in 0..3 {
         for dx in 0..3 {
-            metal[(20 + dz) * w + 30 + dx] = 255;
+            metal[(20 + dz) * w + 30 + dx] = 100;
         }
     }
     smf.extend_from_slice(&metal);
@@ -118,6 +129,6 @@ fn imports_extracted_map_directory() {
     assert_eq!(spec.start_positions.len(), 2);
     assert_eq!(spec.start("P2").unwrap().x, 900.0);
     assert_eq!(spec.metal_spots.len(), 1);
-    // 9 squares at 2.55 metal each: worth 22.95, value 0.023.
-    assert!((spec.metal_spots[0].metal - 0.023).abs() < 1e-9, "{:?}", spec.metal_spots[0]);
+    // 9 squares of raw 100 * max metal 2.55: worth 2295, value 2.295.
+    assert!((spec.metal_spots[0].metal - 2.295).abs() < 1e-9, "{:?}", spec.metal_spots[0]);
 }
