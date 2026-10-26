@@ -8,6 +8,9 @@
 //!   commander = "armcom",
 //!   -- units that a plan may use, besides the commander
 //!   units = { "armmex", "armsolar", "armwin", "armlab", "armck" },
+//!   -- "nearest_start": spots nearer to this start than to any other
+//!   -- start position (default); "all": every spot on the map
+//!   metal_spots = "nearest_start",
 //!   horizon_s = 300,
 //!   -- "max_eco", or Lua source that returns function(o) return score end
 //!   objective = "max_eco",
@@ -32,6 +35,8 @@ struct Raw {
     start: String,
     commander: String,
     units: Vec<String>,
+    #[serde(default)]
+    metal_spots: SpotRule,
     #[serde(default = "default_horizon")]
     horizon_s: f64,
     #[serde(default = "default_objective")]
@@ -61,6 +66,18 @@ struct RawSim {
     converter_level: Option<f64>,
 }
 
+/// Which metal spots the player may take.
+#[derive(Debug, Clone, Copy, Default, PartialEq, Eq, Deserialize)]
+#[serde(rename_all = "snake_case")]
+pub enum SpotRule {
+    /// The spots that are nearer to this start position than to any
+    /// other start position: the player's own share in a full lobby.
+    #[default]
+    NearestStart,
+    /// Every spot on the map, as in a 1v1 on a big map.
+    All,
+}
+
 fn default_horizon() -> f64 {
     300.0
 }
@@ -77,6 +94,7 @@ pub struct Config {
     pub start: String,
     pub commander: String,
     pub units: Vec<String>,
+    pub metal_spots: SpotRule,
     /// `None` for the built-in max_eco objective, else Lua source.
     pub objective_lua: Option<String>,
     pub settings: Settings,
@@ -103,6 +121,7 @@ impl Config {
             start: raw.start,
             commander: raw.commander,
             units: raw.units,
+            metal_spots: raw.metal_spots,
             objective_lua: (raw.objective != "max_eco").then_some(raw.objective),
             settings: Settings {
                 horizon_s: raw.horizon_s,
@@ -147,6 +166,7 @@ mod tests {
         let c = Config::load(&path).unwrap();
         assert_eq!(c.bar_root, dir.join("bar"));
         assert_eq!(c.settings.horizon_s, 300.0);
+        assert_eq!(c.metal_spots, SpotRule::NearestStart);
         assert_eq!(c.search.iterations, 10);
         assert!(c.objective_lua.unwrap().contains("metal_income"));
         std::fs::remove_dir_all(dir).unwrap();

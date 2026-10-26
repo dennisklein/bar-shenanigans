@@ -123,6 +123,11 @@ start is 1000 metal, 1000 energy and 1000 storage of each
 (`game_team_resources.lua`). Wind is the average of BAR's own table in
 `common/wind_functions.lua`.
 
+The player takes only the metal spots that are nearer to its start
+position than to any other start position (`metal_spots =
+"nearest_start"`): its share in a full lobby. On All That Glitters, P1
+has 6 spots and P6 has 15. Set `metal_spots = "all"` for a 1v1.
+
 Not in the model: terrain, pathing, acceleration and turning, wind
 variation, reclaim, combat. Each `opener.json` lists its assumptions.
 
@@ -161,8 +166,8 @@ removes each order that does not improve the score.
 ### Config
 
 See [`configs/all_that_glitters_eco.lua`](configs/all_that_glitters_eco.lua):
-BAR checkout, map spec, start position, commander, allowed units,
-horizon, objective, search and simulation settings. Override the start
+BAR checkout, map spec, start position, commander, allowed units, metal
+spot rule, horizon, objective, search and simulation settings. Override the start
 position with `--start P5`, the effort with `--iterations` and `--runs`,
 and the first plan with `--from plan.lua`.
 

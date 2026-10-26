@@ -24,6 +24,10 @@ return {
 		"armca", -- Construction Aircraft
 	},
 
+	-- "nearest_start": the spots nearer to this start than to any other
+	-- start position (your share in a full 8v8); "all": every spot.
+	metal_spots = "nearest_start",
+
 	horizon_s = 300,
 
 	-- "max_eco": metal income + net energy income / 70 at the horizon.

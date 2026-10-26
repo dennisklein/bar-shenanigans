@@ -1,10 +1,11 @@
 use std::path::{Path, PathBuf};
 
 use anyhow::{anyhow, Context, Result};
+use bar_data::map::{Spot, StartPos};
 use bar_data::{MapSpec, UnitDefs};
 use clap::{Parser, Subcommand};
 use eco_opener::catalog::Catalog;
-use eco_opener::config::Config;
+use eco_opener::config::{Config, SpotRule};
 use eco_opener::export::{to_opener, MapMeta};
 use eco_opener::objective::Objective;
 use eco_opener::plan::Plan;
@@ -82,7 +83,7 @@ fn setup(config_path: &Path, start: Option<String>) -> Result<Setup> {
     let world = World {
         map_size: Pos { x: spec.size.x, z: spec.size.z },
         start: Pos { x: start.x, z: start.z },
-        spots: spec.metal_spots.iter().map(|s| MetalSpot { x: s.x, z: s.z, metal: s.metal }).collect(),
+        spots: usable_spots(&spec, start, config.metal_spots),
         wind,
         tidal: spec.tidal,
     };
@@ -94,6 +95,19 @@ fn setup(config_path: &Path, start: Option<String>) -> Result<Setup> {
     let faction = config.commander.chars().take(3).collect();
     let map = MapMeta { name: spec.name.clone(), wind_min: spec.wind.min, wind_max: spec.wind.max };
     Ok(Setup { config, defs, catalog, world, map, objective, faction })
+}
+
+/// The metal spots of the player at `start`.
+fn usable_spots(spec: &MapSpec, start: &StartPos, rule: SpotRule) -> Vec<MetalSpot> {
+    let d = |p: &StartPos, s: &Spot| (p.x - s.x).hypot(p.z - s.z);
+    spec.metal_spots
+        .iter()
+        .filter(|s| match rule {
+            SpotRule::All => true,
+            SpotRule::NearestStart => spec.start_positions.iter().all(|o| d(start, s) <= d(o, s)),
+        })
+        .map(|s| MetalSpot { x: s.x, z: s.z, metal: s.metal })
+        .collect()
 }
 
 fn report(s: &Setup, out: &Outcome, score: f64) {
