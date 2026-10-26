@@ -1,0 +1,26 @@
+# Toolchain for this workspace: `mise install`, then `mise run <task>`.
+# The vendored Lua in mlua also needs a C compiler (cc) on the system.
+
+[tools]
+rust = { version = "1.97.0", components = "clippy,rustfmt" }
+
+[env]
+# Checkout of the BAR repository, used by the configs and the BAR tests.
+BAR_ROOT = "{{config_root}}/../Beyond-All-Reason"
+
+[tasks.bar-checkout]
+description = "Sparse clone of the BAR repository next to this one"
+run = """
+if [ ! -d "$BAR_ROOT" ]; then
+  git clone --filter=blob:none --sparse https://github.com/beyond-all-reason/Beyond-All-Reason "$BAR_ROOT"
+fi
+git -C "$BAR_ROOT" sparse-checkout set units gamedata common unitbasedefs language
+"""
+
+[tasks.test]
+description = "Run all tests, including the tests against the BAR checkout"
+run = "cargo test --workspace"
+
+[tasks.lint]
+description = "Check formatting and clippy warnings"
+run = ["cargo fmt --all --check", "cargo clippy --workspace --all-targets -- -D warnings"]

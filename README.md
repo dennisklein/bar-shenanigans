@@ -31,8 +31,19 @@ flowchart LR
 
 ## Requirements
 
-- Rust 1.82 or newer.
-- A checkout of the BAR repository. A sparse checkout is sufficient:
+- Rust 1.82 or newer, and a C compiler (`cc`) for the vendored Lua.
+  [mise](https://mise.jdx.dev) installs the pinned toolchain from
+  [`mise.toml`](mise.toml):
+
+  ```sh
+  mise install          # Rust 1.97.0 with clippy and rustfmt
+  mise run bar-checkout # sparse clone of BAR to ../Beyond-All-Reason
+  mise run test         # all tests; mise sets BAR_ROOT
+  mise run lint         # rustfmt check and clippy
+  ```
+
+- A checkout of the BAR repository. A sparse checkout is sufficient
+  (`mise run bar-checkout` does this):
 
   ```sh
   git clone --filter=blob:none --sparse \
