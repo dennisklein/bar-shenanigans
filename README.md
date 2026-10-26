@@ -55,7 +55,8 @@ mise run gui
 | --- | --- |
 | `bar:pull` | Clones or updates a sparse checkout of the BAR repository in `$BAR_ROOT` (default `../Beyond-All-Reason`). |
 | `map:fetch` | Gets `data/maps/all_that_glitters_v2.2.3.sd7` from `$BAR_MAP_FILE`, the local BAR install, or the BAR map server. |
-| `map:import` | Makes `data/maps/all_that_glitters.lua` from the map archive. |
+| `map:metadata` | Downloads BAR's maps-metadata `map_list.yaml` (the lobby start positions). |
+| `map:import` | Makes `data/maps/all_that_glitters.lua` from the map archive and the map list. |
 | `setup` | `bar:pull` and `map:import`. |
 | `eco:search [--start P1] [--iterations N] [--runs N]` | Searches for the best eco opener. Writes `openers/all_that_glitters_eco.json` and `.lua` (`_P5` etc. for other start positions). |
 | `eco:replay <plan.lua> [--start P1] [--out file]` | Simulates a Lua plan. |
@@ -171,8 +172,12 @@ A map spec is a Lua file in `data/maps/`: size, wind, tidal strength,
 start positions and metal spots. `bar-map-import` makes it from a map
 archive:
 
-- `mapinfo.lua` gives wind, tidal strength, maximum metal, extractor
-  radius and start positions.
+- `mapinfo.lua` gives wind, tidal strength, maximum metal and extractor
+  radius.
+- BAR's [maps-metadata](https://github.com/beyond-all-reason/maps-metadata)
+  gives the start positions with the ids and roles of the BAR lobby
+  (`--metadata map_list.yaml`). Without it, the start positions come from
+  `mapinfo.lua`.
 - The `.smf` file gives the size and the metal map.
 - BAR's own `common/upgets/api_resource_spot_finder.lua` finds the metal
   spots on that metal map. Thus the spots and their values are the same
@@ -214,7 +219,7 @@ Without `BAR_ROOT`, the tests against the BAR checkout skip.
 | Unit defs | BAR `units/**/*.lua` with `gamedata/unitdefs_post.lua` and `gamedata/alldefs_post.lua` |
 | Unit names | BAR `language/en/units.json` |
 | Average wind | BAR `common/wind_functions.lua` |
-| Metal spots | BAR `common/upgets/api_resource_spot_finder.lua` on the map's metal map |
+| Metal spots | BAR `common/upgets/api_resource_spot_finder.lua` on the map's metal map (metal amount = raw byte * `maxMetal`) |
 | Converters | BAR `luarules/gadgets/game_energy_conversion.lua` (75 % level) |
 | Start resources | BAR `modoptions.lua` defaults and `luarules/gadgets/game_team_resources.lua` |
-| Start positions | the map's `mapinfo.lua` ([BAR maps-metadata](https://github.com/beyond-all-reason/maps-metadata) has the same list) |
+| Start positions | [BAR maps-metadata](https://github.com/beyond-all-reason/maps-metadata) `map_list.yaml`, else the map's `mapinfo.lua` |

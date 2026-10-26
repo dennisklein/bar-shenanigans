@@ -162,7 +162,7 @@ impl MapInfo {
             }
             keyed.sort_by_key(|k| k.0);
             for (n, (_, x, z)) in keyed.into_iter().enumerate() {
-                start_positions.push(StartPos { id: format!("P{}", n + 1), x, z });
+                start_positions.push(StartPos { id: format!("P{}", n + 1), x, z, role: None });
             }
         }
         Ok(MapInfo {
@@ -397,6 +397,72 @@ pub fn import_map(archive_path: &Path, bar_root: &Path) -> Result<MapSpec> {
     Ok(spec)
 }
 
+/// Start positions from BAR's maps-metadata (`map_list.yaml`).
+///
+/// For maps with `startPosActive`, the BAR lobby uses these fixed
+/// positions and their ids (P1, P2, ...), not the order in `mapinfo.lua`.
+/// Returns `None` if the map has no entry with start positions.
+pub fn metadata_start_positions(map_list_yaml: &str, spring_name: &str) -> Result<Option<Vec<StartPos>>> {
+    #[derive(serde::Deserialize)]
+    #[serde(rename_all = "camelCase")]
+    struct Entry {
+        spring_name: Option<String>,
+        start_pos: Option<Positions>,
+    }
+    #[derive(serde::Deserialize)]
+    struct Positions {
+        positions: BTreeMap<String, Xy>,
+        #[serde(default)]
+        team: Vec<Team>,
+    }
+    #[derive(serde::Deserialize)]
+    struct Xy {
+        x: f64,
+        y: f64,
+    }
+    #[derive(serde::Deserialize)]
+    struct Team {
+        #[serde(default)]
+        sides: Vec<Side>,
+    }
+    #[derive(serde::Deserialize)]
+    struct Side {
+        #[serde(default)]
+        starts: Vec<Start>,
+    }
+    #[derive(serde::Deserialize)]
+    #[serde(rename_all = "camelCase")]
+    struct Start {
+        role: Option<String>,
+        spawn_point: String,
+    }
+
+    let list: BTreeMap<String, serde_yaml_ng::Value> =
+        serde_yaml_ng::from_str(map_list_yaml).context("cannot parse map_list.yaml")?;
+    for value in list.into_values() {
+        let Ok(entry) = serde_yaml_ng::from_value::<Entry>(value) else { continue };
+        if entry.spring_name.as_deref() != Some(spring_name) {
+            continue;
+        }
+        let Some(sp) = entry.start_pos else { return Ok(None) };
+        let mut roles = BTreeMap::new();
+        for start in sp.team.iter().take(1).flat_map(|t| &t.sides).flat_map(|s| &s.starts) {
+            if let Some(r) = &start.role {
+                roles.entry(start.spawn_point.clone()).or_insert_with(|| r.clone());
+            }
+        }
+        let mut out: Vec<StartPos> = sp
+            .positions
+            .into_iter()
+            .map(|(id, p)| StartPos { role: roles.get(&id).cloned(), id, x: p.x, z: p.y })
+            .collect();
+        let num = |id: &str| id.trim_start_matches(|c: char| !c.is_ascii_digit()).parse::<u32>().unwrap_or(u32::MAX);
+        out.sort_by(|a, b| num(&a.id).cmp(&num(&b.id)).then(a.id.cmp(&b.id)));
+        return Ok(Some(out));
+    }
+    Ok(None)
+}
+
 impl MapSpec {
     /// The spec as a Lua file that [`MapSpec::load`] reads.
     pub fn to_lua(&self, header: &str) -> String {
@@ -414,7 +480,11 @@ impl MapSpec {
         let _ = writeln!(s, "\ttidal = {},", self.tidal);
         let _ = writeln!(s, "\tstart_positions = {{");
         for p in &self.start_positions {
-            let _ = writeln!(s, "\t\t{{ id = {:?}, x = {}, z = {} }},", p.id, p.x, p.z);
+            match &p.role {
+                Some(r) => writeln!(s, "\t\t{{ id = {:?}, x = {}, z = {}, role = {r:?} }},", p.id, p.x, p.z),
+                None => writeln!(s, "\t\t{{ id = {:?}, x = {}, z = {} }},", p.id, p.x, p.z),
+            }
+            .unwrap();
         }
         let _ = writeln!(s, "\t}},");
         let _ = writeln!(s, "\tmetal_spots = {{");
@@ -452,13 +522,43 @@ mod tests {
     }
 
     #[test]
+    fn reads_metadata_start_positions() {
+        let yaml = r#"
+abc:
+  springName: Other Map v1
+xyz:
+  springName: Test Map v2
+  startPos:
+    positions:
+      P10: { x: 10, y: 20 }
+      P2: { x: 30, y: 40 }
+      P1: { x: 50, y: 60 }
+    team:
+      - playersPerTeam: 2
+        sides:
+          - starts:
+              - { role: front, spawnPoint: P1 }
+              - { role: air, spawnPoint: P2 }
+"#;
+        let p = metadata_start_positions(yaml, "Test Map v2").unwrap().unwrap();
+        let ids: Vec<&str> = p.iter().map(|s| s.id.as_str()).collect();
+        assert_eq!(ids, ["P1", "P2", "P10"]);
+        assert_eq!((p[0].x, p[0].z, p[0].role.as_deref()), (50.0, 60.0, Some("front")));
+        assert_eq!(p[2].role, None);
+        assert!(metadata_start_positions(yaml, "Missing").unwrap().is_none());
+    }
+
+    #[test]
     fn spec_lua_round_trip() {
         let spec = MapSpec {
             name: "Test \"Map\"".into(),
             size: Xz { x: 1024.0, z: 2048.0 },
             wind: WindRange { min: 2.0, max: 18.0 },
             tidal: 13.0,
-            start_positions: vec![StartPos { id: "P1".into(), x: 100.0, z: 200.0 }],
+            start_positions: vec![
+                StartPos { id: "P1".into(), x: 100.0, z: 200.0, role: None },
+                StartPos { id: "P2".into(), x: 300.0, z: 200.0, role: Some("air".into()) },
+            ],
             metal_spots: vec![Spot { x: 300.0, z: 400.0, metal: 1.8 }],
             source: Some("test.sd7".into()),
         };

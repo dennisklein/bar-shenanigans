@@ -14,6 +14,7 @@ BAR_ROOT = "{{ get_env(name='BAR_ROOT', default=config_root ~ '/../Beyond-All-Re
 MAP_SPRING_NAME = "All That Glitters v2.2.3"
 MAP_ARCHIVE = "{{config_root}}/data/maps/all_that_glitters_v2.2.3.sd7"
 MAP_SPEC = "{{config_root}}/data/maps/all_that_glitters.lua"
+MAP_LIST = "{{config_root}}/data/maps/map_list.yaml"
 
 # --- Dependencies ------------------------------------------------------------
 
@@ -59,10 +60,19 @@ curl -fL -o "$MAP_ARCHIVE" "$url"
 echo "downloaded $url"
 """
 
+[tasks."map:metadata"]
+description = "Download BAR's maps-metadata map list (lobby start positions)"
+run = """
+set -e
+mkdir -p "$(dirname "$MAP_LIST")"
+curl -fsSL -o "$MAP_LIST" https://raw.githubusercontent.com/beyond-all-reason/maps-metadata/main/map_list.yaml
+echo "wrote $MAP_LIST"
+"""
+
 [tasks."map:import"]
-description = "Make the map spec Lua file from the map archive"
-depends = ["map:fetch"]
-run = "cargo run --release -p bar-data --bin bar-map-import -- \"$MAP_ARCHIVE\" \"$BAR_ROOT\" \"$MAP_SPEC\""
+description = "Make the map spec Lua file from the map archive and the map list"
+depends = ["map:fetch", "map:metadata"]
+run = "cargo run --release -p bar-data --bin bar-map-import -- \"$MAP_ARCHIVE\" \"$BAR_ROOT\" \"$MAP_SPEC\" --metadata \"$MAP_LIST\""
 
 [tasks.setup]
 description = "Get all dependencies: BAR repository and map spec"

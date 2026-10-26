@@ -8,6 +8,7 @@ rust-version.workspace = true
 
 [dependencies]
 sevenz-rust2 = { version = "0.24", default-features = false }
+serde_yaml_ng = "0.10"
 anyhow.workspace = true
 mlua.workspace = true
 serde.workspace = true

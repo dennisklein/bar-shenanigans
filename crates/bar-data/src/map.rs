@@ -9,7 +9,7 @@
 //!   wind = { min = 0, max = 20 },
 //!   tidal = 0,
 //!   start_positions = {
-//!     { id = "P1", x = 668, z = 755 },
+//!     { id = "P1", x = 668, z = 755, role = "front" },  -- role is optional
 //!   },
 //!   metal_spots = {
 //!     { x = 600, z = 680, metal = 1.8 },   -- metal/s of a T1 extractor
@@ -54,6 +54,9 @@ pub struct StartPos {
     pub id: String,
     pub x: f64,
     pub z: f64,
+    /// Role from BAR's maps-metadata, for example `front`, `air` or `tech`.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub role: Option<String>,
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Serialize, Deserialize)]
