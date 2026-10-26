@@ -31,51 +31,51 @@ flowchart LR
 
 ## Requirements
 
-- Rust 1.82 or newer, and a C compiler (`cc`) for the vendored Lua.
-  [mise](https://mise.jdx.dev) installs the pinned toolchain from
-  [`mise.toml`](mise.toml):
-
-  ```sh
-  mise install          # Rust 1.97.0 with clippy and rustfmt
-  mise run bar-checkout # sparse clone of BAR to ../Beyond-All-Reason
-  mise run test         # all tests; mise sets BAR_ROOT
-  mise run lint         # rustfmt check and clippy
-  ```
-
-- A checkout of the BAR repository. A sparse checkout is sufficient
-  (`mise run bar-checkout` does this):
-
-  ```sh
-  git clone --filter=blob:none --sparse \
-      https://github.com/beyond-all-reason/Beyond-All-Reason ../Beyond-All-Reason
-  git -C ../Beyond-All-Reason sparse-checkout set units gamedata common unitbasedefs language
-  ```
-
-  The configs in `configs/` expect the checkout next to this repository.
-- For a new map: the map archive (`.sd7`). It is in the `maps` folder of
-  your BAR installation.
+- [mise](https://mise.jdx.dev). It installs the pinned toolchain (Rust
+  1.97.0 with clippy and rustfmt) from [`mise.toml`](mise.toml). Without
+  mise: Rust 1.82 or newer.
+- A C compiler (`cc`). `mlua` builds its own Lua, so no Lua install is
+  necessary.
+- The map archive (`.sd7`). `mise run map:fetch` looks in the `maps`
+  folder of your BAR installation. Else it downloads the file from the BAR
+  map server. Else set `BAR_MAP_FILE` to the file.
 
 ## Quick start
 
 ```sh
-# 1. Make the map spec (once per map).
-cargo run --release -p bar-data --bin bar-map-import -- \
-    path/to/all_that_glitters_v2.2.3.sd7 ../Beyond-All-Reason data/maps/all_that_glitters.lua
-
-# 2. Search for the best eco opener (about 1 minute on 4 cores).
-cargo run --release -p eco-opener -- search configs/all_that_glitters_eco.lua \
-    --out openers/all_that_glitters_eco.json
-
-# 3. Browse the result.
-cargo run --release -p opener-gui -- openers/all_that_glitters_eco.json
+mise install     # toolchain
+mise run setup   # BAR repository and map spec
+mise run eco:search
+mise run gui
 ```
 
-The search also writes `openers/all_that_glitters_eco.lua`: the best plan
-in Lua. Edit it and simulate it again:
+## Tasks
+
+| Task | What it does |
+| --- | --- |
+| `bar:pull` | Clones or updates a sparse checkout of the BAR repository in `$BAR_ROOT` (default `../Beyond-All-Reason`). |
+| `map:fetch` | Gets `data/maps/all_that_glitters_v2.2.3.sd7` from `$BAR_MAP_FILE`, the local BAR install, or the BAR map server. |
+| `map:import` | Makes `data/maps/all_that_glitters.lua` from the map archive. |
+| `setup` | `bar:pull` and `map:import`. |
+| `eco:search [--start P1] [--iterations N] [--runs N]` | Searches for the best eco opener. Writes `openers/all_that_glitters_eco.json` and `.lua` (`_P5` etc. for other start positions). |
+| `eco:replay <plan.lua> [--start P1] [--out file]` | Simulates a Lua plan. |
+| `tickspam:configs` | Tick spam lab and nano configuration table. |
+| `tickspam:search [--start P1]` | Tick spam search. Writes `openers/all_that_glitters_tickspam.json`. |
+| `tickspam:replay <plan.lua> [--start P1] [--out file]` | Simulates a tick spam plan. |
+| `gui [file]` | Opens an `opener.json` (default: the eco result). |
+| `test` | All tests. mise sets `BAR_ROOT`, so the tests against the BAR checkout also run. |
+| `lint` | `cargo fmt --check` and `cargo clippy -D warnings`. |
+
+`mise tasks` lists them. Each task is a short `cargo run` command; see
+`mise.toml` to run it without mise.
+
+The search also writes the best plan as Lua. Edit it and simulate it
+again:
 
 ```sh
-cargo run --release -p eco-opener -- replay configs/all_that_glitters_eco.lua \
-    openers/all_that_glitters_eco.lua --out openers/my_opener.json
+cp openers/all_that_glitters_eco.lua my_plan.lua
+mise run eco:replay my_plan.lua --out openers/my_plan.json
+mise run gui openers/my_plan.json
 ```
 
 ## Eco opener search
@@ -199,11 +199,13 @@ See [crates/opener-gui/README.md](crates/opener-gui/README.md).
 
 ## Tests
 
+`mise run test`, or without mise:
+
 ```sh
-cargo test --workspace
-# Also the tests against a real BAR checkout:
 BAR_ROOT=../Beyond-All-Reason cargo test --workspace
 ```
+
+Without `BAR_ROOT`, the tests against the BAR checkout skip.
 
 ## Data sources
 

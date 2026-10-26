@@ -1,4 +1,7 @@
-# Toolchain for this workspace: `mise install`, then `mise run <task>`.
+# Toolchain and tasks for this workspace.
+#   mise install        install the toolchain
+#   mise run setup      get the BAR repository and the map spec
+#   mise tasks          list all tasks
 # The vendored Lua in mlua also needs a C compiler (cc) on the system.
 
 [tools]
@@ -6,16 +9,133 @@ rust = { version = "1.97.0", components = "clippy,rustfmt" }
 
 [env]
 # Checkout of the BAR repository, used by the configs and the BAR tests.
-BAR_ROOT = "{{config_root}}/../Beyond-All-Reason"
+BAR_ROOT = "{{ get_env(name='BAR_ROOT', default=config_root ~ '/../Beyond-All-Reason') }}"
+# The map of the default runs.
+MAP_SPRING_NAME = "All That Glitters v2.2.3"
+MAP_ARCHIVE = "{{config_root}}/data/maps/all_that_glitters_v2.2.3.sd7"
+MAP_SPEC = "{{config_root}}/data/maps/all_that_glitters.lua"
 
-[tasks.bar-checkout]
-description = "Sparse clone of the BAR repository next to this one"
+# --- Dependencies ------------------------------------------------------------
+
+[tasks."bar:pull"]
+description = "Clone or update the BAR repository (sparse) next to this one"
 run = """
-if [ ! -d "$BAR_ROOT" ]; then
+set -e
+if [ ! -d "$BAR_ROOT/.git" ]; then
   git clone --filter=blob:none --sparse https://github.com/beyond-all-reason/Beyond-All-Reason "$BAR_ROOT"
+else
+  git -C "$BAR_ROOT" pull --ff-only
 fi
 git -C "$BAR_ROOT" sparse-checkout set units gamedata common unitbasedefs language
+git -C "$BAR_ROOT" log -1 --format='BAR at %h (%cs)'
 """
+
+[tasks."map:fetch"]
+description = "Get the map archive: $BAR_MAP_FILE, the local BAR install, or the BAR map server"
+run = """
+set -e
+[ -f "$MAP_ARCHIVE" ] && { echo "have $MAP_ARCHIVE"; exit 0; }
+mkdir -p "$(dirname "$MAP_ARCHIVE")"
+name=$(basename "$MAP_ARCHIVE")
+src="${BAR_MAP_FILE:-}"
+if [ -z "$src" ]; then
+  for dir in "$HOME/.local/state/Beyond All Reason/maps" \
+             "$HOME/Documents/My Games/Beyond All Reason/maps" \
+             "${USERPROFILE:-/nonexistent}/Documents/My Games/Beyond All Reason/maps"; do
+    [ -d "$dir" ] && src=$(find "$dir" -maxdepth 1 -iname "$name" | head -n 1)
+    [ -n "$src" ] && break
+  done
+fi
+if [ -n "$src" ]; then
+  cp "$src" "$MAP_ARCHIVE"
+  echo "copied $src"
+  exit 0
+fi
+query=$(printf %s "$MAP_SPRING_NAME" | sed 's/ /%20/g')
+url=$(curl -fsSL "https://files-cdn.beyondallreason.dev/find?category=map&springname=$query" \
+      | grep -o '"mirrors":\\["[^"]*' | head -n 1 | sed 's/.*\\["//')
+[ -n "$url" ] || { echo "map not found; set BAR_MAP_FILE to the .sd7 file" >&2; exit 1; }
+curl -fL -o "$MAP_ARCHIVE" "$url"
+echo "downloaded $url"
+"""
+
+[tasks."map:import"]
+description = "Make the map spec Lua file from the map archive"
+depends = ["map:fetch"]
+run = "cargo run --release -p bar-data --bin bar-map-import -- \"$MAP_ARCHIVE\" \"$BAR_ROOT\" \"$MAP_SPEC\""
+
+[tasks.setup]
+description = "Get all dependencies: BAR repository and map spec"
+depends = ["bar:pull"]
+run = "mise run map:import"
+
+# --- Runs --------------------------------------------------------------------
+
+[tasks."eco:search"]
+description = "Search for the best eco opener; writes openers/all_that_glitters_eco[_<start>].{json,lua}"
+usage = '''
+flag "--start <start>" default="P1" help="Start position id"
+flag "--iterations <n>" default="60000" help="Annealing steps per run"
+flag "--runs <n>" default="8" help="Independent runs"
+'''
+run = """
+mkdir -p openers
+suffix=""; [ "$usage_start" = P1 ] || suffix="_$usage_start"
+cargo run --release -p eco-opener -- search configs/all_that_glitters_eco.lua \
+  --start "$usage_start" --iterations "$usage_iterations" --runs "$usage_runs" \
+  --out "openers/all_that_glitters_eco$suffix.json"
+"""
+
+[tasks."eco:replay"]
+description = "Simulate a Lua plan with the eco simulator"
+usage = '''
+arg "<plan>" help="Lua plan file"
+flag "--start <start>" default="P1" help="Start position id"
+flag "--out <file>" default="openers/replay.json" help="Output opener.json"
+'''
+run = """
+mkdir -p "$(dirname "$usage_out")"
+cargo run --release -p eco-opener -- replay configs/all_that_glitters_eco.lua "$usage_plan" \
+  --start "$usage_start" --out "$usage_out"
+"""
+
+[tasks."tickspam:configs"]
+description = "Tick spam: lab and nano configuration table"
+run = "cargo run --release -p tickspam -- configs --bar \"$BAR_ROOT\""
+
+[tasks."tickspam:search"]
+description = "Tick spam: best commander build for the most Ticks"
+usage = '''
+flag "--start <start>" default="P1" help="Start position id"
+'''
+run = """
+mkdir -p openers
+suffix=""; [ "$usage_start" = P1 ] || suffix="_$usage_start"
+cargo run --release -p tickspam -- search --bar "$BAR_ROOT" --map "$MAP_SPEC" \
+  --start "$usage_start" --out "openers/all_that_glitters_tickspam$suffix.json"
+"""
+
+[tasks."tickspam:replay"]
+description = "Tick spam: simulate a Lua plan"
+usage = '''
+arg "<plan>" help="Lua plan file, for example crates/tickspam/plans/lab_first.lua"
+flag "--start <start>" default="P1" help="Start position id"
+flag "--out <file>" default="openers/tickspam_replay.json" help="Output opener.json"
+'''
+run = """
+mkdir -p "$(dirname "$usage_out")"
+cargo run --release -p tickspam -- replay --bar "$BAR_ROOT" --map "$MAP_SPEC" \
+  --start "$usage_start" --plan "$usage_plan" --out "$usage_out"
+"""
+
+[tasks.gui]
+description = "Browse an opener.json"
+usage = '''
+arg "[file]" default="openers/all_that_glitters_eco.json" help="opener.json to open"
+'''
+run = "cargo run --release -p opener-gui -- \"$usage_file\""
+
+# --- Checks ------------------------------------------------------------------
 
 [tasks.test]
 description = "Run all tests, including the tests against the BAR checkout"
