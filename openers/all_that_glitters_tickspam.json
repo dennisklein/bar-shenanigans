@@ -1,0 +1,5092 @@
+{
+  "schema_version": 1,
+  "generator": "tickspam 0.1.0",
+  "bar_commit": "cdb0596f8a0ad0ef91299500fe89b1171c91e628",
+  "map": {
+    "name": "All That Glitters v2.2.3",
+    "size": {
+      "x": 6144.0,
+      "z": 10240.0
+    },
+    "start_pos": {
+      "x": 668.0,
+      "z": 755.0
+    },
+    "metal_spots": [
+      {
+        "x": 4640.0,
+        "z": 192.0,
+        "metal": 1.837
+      },
+      {
+        "x": 3840.0,
+        "z": 224.0,
+        "metal": 1.839
+      },
+      {
+        "x": 5200.0,
+        "z": 272.0,
+        "metal": 1.837
+      },
+      {
+        "x": 1456.0,
+        "z": 336.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2320.0,
+        "z": 336.0,
+        "metal": 1.839
+      },
+      {
+        "x": 3344.0,
+        "z": 432.0,
+        "metal": 1.833
+      },
+      {
+        "x": 5792.0,
+        "z": 432.0,
+        "metal": 1.839
+      },
+      {
+        "x": 4256.0,
+        "z": 480.0,
+        "metal": 1.833
+      },
+      {
+        "x": 4032.0,
+        "z": 640.0,
+        "metal": 1.833
+      },
+      {
+        "x": 2912.0,
+        "z": 656.0,
+        "metal": 1.837
+      },
+      {
+        "x": 5584.0,
+        "z": 672.0,
+        "metal": 1.837
+      },
+      {
+        "x": 528.0,
+        "z": 704.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2688.0,
+        "z": 704.0,
+        "metal": 1.837
+      },
+      {
+        "x": 5904.0,
+        "z": 704.0,
+        "metal": 1.837
+      },
+      {
+        "x": 4320.0,
+        "z": 720.0,
+        "metal": 1.839
+      },
+      {
+        "x": 816.0,
+        "z": 736.0,
+        "metal": 1.839
+      },
+      {
+        "x": 2896.0,
+        "z": 880.0,
+        "metal": 1.837
+      },
+      {
+        "x": 672.0,
+        "z": 896.0,
+        "metal": 1.833
+      },
+      {
+        "x": 5104.0,
+        "z": 1024.0,
+        "metal": 1.833
+      },
+      {
+        "x": 1376.0,
+        "z": 1136.0,
+        "metal": 1.837
+      },
+      {
+        "x": 3936.0,
+        "z": 1232.0,
+        "metal": 1.839
+      },
+      {
+        "x": 2768.0,
+        "z": 1328.0,
+        "metal": 1.837
+      },
+      {
+        "x": 5840.0,
+        "z": 1328.0,
+        "metal": 1.839
+      },
+      {
+        "x": 304.0,
+        "z": 1600.0,
+        "metal": 1.839
+      },
+      {
+        "x": 1280.0,
+        "z": 1856.0,
+        "metal": 1.837
+      },
+      {
+        "x": 4192.0,
+        "z": 1856.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2928.0,
+        "z": 1888.0,
+        "metal": 1.837
+      },
+      {
+        "x": 3184.0,
+        "z": 1904.0,
+        "metal": 1.837
+      },
+      {
+        "x": 1008.0,
+        "z": 1920.0,
+        "metal": 1.837
+      },
+      {
+        "x": 4448.0,
+        "z": 1936.0,
+        "metal": 1.833
+      },
+      {
+        "x": 5360.0,
+        "z": 1936.0,
+        "metal": 1.837
+      },
+      {
+        "x": 3680.0,
+        "z": 1984.0,
+        "metal": 1.833
+      },
+      {
+        "x": 5616.0,
+        "z": 2000.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2992.0,
+        "z": 2128.0,
+        "metal": 1.837
+      },
+      {
+        "x": 1168.0,
+        "z": 2144.0,
+        "metal": 1.833
+      },
+      {
+        "x": 4256.0,
+        "z": 2160.0,
+        "metal": 1.839
+      },
+      {
+        "x": 5440.0,
+        "z": 2160.0,
+        "metal": 1.837
+      },
+      {
+        "x": 5792.0,
+        "z": 2416.0,
+        "metal": 1.837
+      },
+      {
+        "x": 4768.0,
+        "z": 2528.0,
+        "metal": 1.837
+      },
+      {
+        "x": 3456.0,
+        "z": 2560.0,
+        "metal": 1.839
+      },
+      {
+        "x": 3984.0,
+        "z": 2608.0,
+        "metal": 1.839
+      },
+      {
+        "x": 2624.0,
+        "z": 2640.0,
+        "metal": 1.839
+      },
+      {
+        "x": 208.0,
+        "z": 2656.0,
+        "metal": 1.837
+      },
+      {
+        "x": 4352.0,
+        "z": 2912.0,
+        "metal": 1.839
+      },
+      {
+        "x": 3040.0,
+        "z": 2928.0,
+        "metal": 1.833
+      },
+      {
+        "x": 1424.0,
+        "z": 3008.0,
+        "metal": 1.833
+      },
+      {
+        "x": 5936.0,
+        "z": 3056.0,
+        "metal": 1.839
+      },
+      {
+        "x": 3440.0,
+        "z": 3312.0,
+        "metal": 1.833
+      },
+      {
+        "x": 4976.0,
+        "z": 3312.0,
+        "metal": 1.833
+      },
+      {
+        "x": 144.0,
+        "z": 3328.0,
+        "metal": 1.839
+      },
+      {
+        "x": 2496.0,
+        "z": 3344.0,
+        "metal": 1.837
+      },
+      {
+        "x": 4192.0,
+        "z": 3424.0,
+        "metal": 1.833
+      },
+      {
+        "x": 5728.0,
+        "z": 3488.0,
+        "metal": 1.833
+      },
+      {
+        "x": 2784.0,
+        "z": 3712.0,
+        "metal": 1.837
+      },
+      {
+        "x": 1088.0,
+        "z": 3744.0,
+        "metal": 3.18
+      },
+      {
+        "x": 3696.0,
+        "z": 3744.0,
+        "metal": 1.839
+      },
+      {
+        "x": 4608.0,
+        "z": 3760.0,
+        "metal": 1.837
+      },
+      {
+        "x": 5328.0,
+        "z": 3824.0,
+        "metal": 1.839
+      },
+      {
+        "x": 2176.0,
+        "z": 3920.0,
+        "metal": 1.837
+      },
+      {
+        "x": 5856.0,
+        "z": 3984.0,
+        "metal": 1.837
+      },
+      {
+        "x": 240.0,
+        "z": 4192.0,
+        "metal": 1.837
+      },
+      {
+        "x": 3248.0,
+        "z": 4192.0,
+        "metal": 1.837
+      },
+      {
+        "x": 4384.0,
+        "z": 4224.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2528.0,
+        "z": 4256.0,
+        "metal": 1.837
+      },
+      {
+        "x": 5008.0,
+        "z": 4400.0,
+        "metal": 1.839
+      },
+      {
+        "x": 5552.0,
+        "z": 4448.0,
+        "metal": 1.837
+      },
+      {
+        "x": 3792.0,
+        "z": 4480.0,
+        "metal": 1.839
+      },
+      {
+        "x": 2160.0,
+        "z": 4624.0,
+        "metal": 1.839
+      },
+      {
+        "x": 5952.0,
+        "z": 4656.0,
+        "metal": 1.833
+      },
+      {
+        "x": 1520.0,
+        "z": 4704.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2640.0,
+        "z": 4744.0,
+        "metal": 3.171
+      },
+      {
+        "x": 4232.0,
+        "z": 4752.0,
+        "metal": 3.171
+      },
+      {
+        "x": 4752.0,
+        "z": 4800.0,
+        "metal": 1.833
+      },
+      {
+        "x": 3568.0,
+        "z": 4960.0,
+        "metal": 1.839
+      },
+      {
+        "x": 1776.0,
+        "z": 4992.0,
+        "metal": 1.837
+      },
+      {
+        "x": 5552.0,
+        "z": 5032.0,
+        "metal": 3.171
+      },
+      {
+        "x": 760.0,
+        "z": 5216.0,
+        "metal": 3.171
+      },
+      {
+        "x": 3184.0,
+        "z": 5328.0,
+        "metal": 1.833
+      },
+      {
+        "x": 4112.0,
+        "z": 5392.0,
+        "metal": 3.18
+      },
+      {
+        "x": 1392.0,
+        "z": 5440.0,
+        "metal": 1.833
+      },
+      {
+        "x": 2432.0,
+        "z": 5440.0,
+        "metal": 3.18
+      },
+      {
+        "x": 1920.0,
+        "z": 5488.0,
+        "metal": 1.837
+      },
+      {
+        "x": 176.0,
+        "z": 5520.0,
+        "metal": 1.839
+      },
+      {
+        "x": 4624.0,
+        "z": 5600.0,
+        "metal": 1.839
+      },
+      {
+        "x": 592.0,
+        "z": 5824.0,
+        "metal": 1.837
+      },
+      {
+        "x": 1136.0,
+        "z": 5840.0,
+        "metal": 1.839
+      },
+      {
+        "x": 3488.0,
+        "z": 5840.0,
+        "metal": 1.837
+      },
+      {
+        "x": 4112.0,
+        "z": 5856.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2352.0,
+        "z": 5920.0,
+        "metal": 1.839
+      },
+      {
+        "x": 1760.0,
+        "z": 6016.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2896.0,
+        "z": 6048.0,
+        "metal": 1.837
+      },
+      {
+        "x": 5984.0,
+        "z": 6144.0,
+        "metal": 1.839
+      },
+      {
+        "x": 3888.0,
+        "z": 6256.0,
+        "metal": 1.839
+      },
+      {
+        "x": 224.0,
+        "z": 6288.0,
+        "metal": 1.839
+      },
+      {
+        "x": 976.0,
+        "z": 6464.0,
+        "metal": 1.837
+      },
+      {
+        "x": 1536.0,
+        "z": 6480.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2448.0,
+        "z": 6496.0,
+        "metal": 1.839
+      },
+      {
+        "x": 3360.0,
+        "z": 6528.0,
+        "metal": 1.837
+      },
+      {
+        "x": 5328.0,
+        "z": 6560.0,
+        "metal": 3.18
+      },
+      {
+        "x": 1952.0,
+        "z": 6816.0,
+        "metal": 1.833
+      },
+      {
+        "x": 432.0,
+        "z": 6832.0,
+        "metal": 1.837
+      },
+      {
+        "x": 6048.0,
+        "z": 6848.0,
+        "metal": 1.839
+      },
+      {
+        "x": 3648.0,
+        "z": 6896.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2704.0,
+        "z": 6928.0,
+        "metal": 1.833
+      },
+      {
+        "x": 1104.0,
+        "z": 7040.0,
+        "metal": 1.839
+      },
+      {
+        "x": 4720.0,
+        "z": 7248.0,
+        "metal": 1.837
+      },
+      {
+        "x": 3104.0,
+        "z": 7312.0,
+        "metal": 1.833
+      },
+      {
+        "x": 1792.0,
+        "z": 7328.0,
+        "metal": 1.839
+      },
+      {
+        "x": 272.0,
+        "z": 7408.0,
+        "metal": 1.837
+      },
+      {
+        "x": 3728.0,
+        "z": 7408.0,
+        "metal": 1.839
+      },
+      {
+        "x": 784.0,
+        "z": 7536.0,
+        "metal": 1.833
+      },
+      {
+        "x": 5808.0,
+        "z": 7584.0,
+        "metal": 1.839
+      },
+      {
+        "x": 2160.0,
+        "z": 7632.0,
+        "metal": 1.839
+      },
+      {
+        "x": 2688.0,
+        "z": 7680.0,
+        "metal": 1.839
+      },
+      {
+        "x": 1376.0,
+        "z": 7712.0,
+        "metal": 1.837
+      },
+      {
+        "x": 704.0,
+        "z": 8080.0,
+        "metal": 1.837
+      },
+      {
+        "x": 1888.0,
+        "z": 8080.0,
+        "metal": 1.839
+      },
+      {
+        "x": 5136.0,
+        "z": 8096.0,
+        "metal": 1.837
+      },
+      {
+        "x": 3152.0,
+        "z": 8112.0,
+        "metal": 1.837
+      },
+      {
+        "x": 528.0,
+        "z": 8240.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2528.0,
+        "z": 8240.0,
+        "metal": 1.833
+      },
+      {
+        "x": 3344.0,
+        "z": 8288.0,
+        "metal": 1.837
+      },
+      {
+        "x": 784.0,
+        "z": 8304.0,
+        "metal": 1.837
+      },
+      {
+        "x": 1696.0,
+        "z": 8304.0,
+        "metal": 1.833
+      },
+      {
+        "x": 5296.0,
+        "z": 8320.0,
+        "metal": 1.833
+      },
+      {
+        "x": 1952.0,
+        "z": 8384.0,
+        "metal": 1.837
+      },
+      {
+        "x": 3120.0,
+        "z": 8384.0,
+        "metal": 1.839
+      },
+      {
+        "x": 5024.0,
+        "z": 8384.0,
+        "metal": 1.839
+      },
+      {
+        "x": 208.0,
+        "z": 8752.0,
+        "metal": 1.833
+      },
+      {
+        "x": 5920.0,
+        "z": 8816.0,
+        "metal": 1.837
+      },
+      {
+        "x": 4784.0,
+        "z": 8912.0,
+        "metal": 1.839
+      },
+      {
+        "x": 3216.0,
+        "z": 8928.0,
+        "metal": 1.837
+      },
+      {
+        "x": 992.0,
+        "z": 8976.0,
+        "metal": 1.839
+      },
+      {
+        "x": 1568.0,
+        "z": 9008.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2240.0,
+        "z": 9040.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2896.0,
+        "z": 9312.0,
+        "metal": 1.837
+      },
+      {
+        "x": 5472.0,
+        "z": 9344.0,
+        "metal": 1.833
+      },
+      {
+        "x": 5328.0,
+        "z": 9504.0,
+        "metal": 1.839
+      },
+      {
+        "x": 1824.0,
+        "z": 9520.0,
+        "metal": 1.839
+      },
+      {
+        "x": 240.0,
+        "z": 9536.0,
+        "metal": 1.837
+      },
+      {
+        "x": 5616.0,
+        "z": 9536.0,
+        "metal": 1.837
+      },
+      {
+        "x": 2112.0,
+        "z": 9600.0,
+        "metal": 1.833
+      },
+      {
+        "x": 3312.0,
+        "z": 9600.0,
+        "metal": 1.839
+      },
+      {
+        "x": 624.0,
+        "z": 9664.0,
+        "metal": 1.839
+      },
+      {
+        "x": 3680.0,
+        "z": 9728.0,
+        "metal": 1.839
+      },
+      {
+        "x": 1888.0,
+        "z": 9760.0,
+        "metal": 1.833
+      },
+      {
+        "x": 352.0,
+        "z": 9808.0,
+        "metal": 1.839
+      },
+      {
+        "x": 3440.0,
+        "z": 9808.0,
+        "metal": 1.839
+      },
+      {
+        "x": 2784.0,
+        "z": 9856.0,
+        "metal": 1.837
+      },
+      {
+        "x": 4752.0,
+        "z": 10064.0,
+        "metal": 1.837
+      },
+      {
+        "x": 1616.0,
+        "z": 10080.0,
+        "metal": 1.837
+      },
+      {
+        "x": 976.0,
+        "z": 10112.0,
+        "metal": 1.837
+      }
+    ],
+    "wind": {
+      "min": 0.0,
+      "max": 16.0,
+      "used": 11.899999618530273
+    },
+    "tidal": 0.0
+  },
+  "faction": "arm",
+  "objective": {
+    "kind": "max_units",
+    "horizon_s": 180.0,
+    "score": 46.0,
+    "description": "Ticks (armflea) complete at the horizon."
+  },
+  "units": {
+    "armcom": {
+      "human_name": "Armada Commander",
+      "metal_cost": 2700.0,
+      "energy_cost": 26000.0,
+      "build_time": 75000.0,
+      "footprint": {
+        "x": 3,
+        "z": 3
+      },
+      "kind": "commander"
+    },
+    "armflea": {
+      "human_name": "Tick",
+      "metal_cost": 21.0,
+      "energy_cost": 300.0,
+      "build_time": 800.0,
+      "footprint": {
+        "x": 1,
+        "z": 1
+      },
+      "kind": "other"
+    },
+    "armlab": {
+      "human_name": "Bot Lab",
+      "metal_cost": 500.0,
+      "energy_cost": 950.0,
+      "build_time": 5000.0,
+      "footprint": {
+        "x": 6,
+        "z": 6
+      },
+      "kind": "factory"
+    },
+    "armmex": {
+      "human_name": "Metal Extractor",
+      "metal_cost": 50.0,
+      "energy_cost": 500.0,
+      "build_time": 1800.0,
+      "footprint": {
+        "x": 4,
+        "z": 4
+      },
+      "kind": "metal_extractor"
+    },
+    "armnanotc": {
+      "human_name": "Construction Turret",
+      "metal_cost": 230.0,
+      "energy_cost": 3200.0,
+      "build_time": 5300.0,
+      "footprint": {
+        "x": 3,
+        "z": 3
+      },
+      "kind": "other"
+    },
+    "armsolar": {
+      "human_name": "Solar Collector",
+      "metal_cost": 155.0,
+      "energy_cost": 0.0,
+      "build_time": 2600.0,
+      "footprint": {
+        "x": 5,
+        "z": 5
+      },
+      "kind": "energy_producer"
+    },
+    "armwin": {
+      "human_name": "Wind Turbine",
+      "metal_cost": 40.0,
+      "energy_cost": 175.0,
+      "build_time": 1600.0,
+      "footprint": {
+        "x": 3,
+        "z": 3
+      },
+      "kind": "energy_producer"
+    }
+  },
+  "builders": [
+    {
+      "id": 0,
+      "unit": "armcom",
+      "created_s": 0.0,
+      "created_by_step": null,
+      "build_power": 300.0
+    },
+    {
+      "id": 4,
+      "unit": "armlab",
+      "created_s": 36.166666666666664,
+      "created_by_step": 3,
+      "build_power": 150.0
+    }
+  ],
+  "steps": [
+    {
+      "index": 0,
+      "builder_id": 0,
+      "action": "build",
+      "unit": "armwin",
+      "target_step": null,
+      "position": {
+        "x": 624.582275390625,
+        "z": 676.1653442382812
+      },
+      "queued_s": 0.0,
+      "start_s": 0.5,
+      "finish_s": 5.8,
+      "complete": true
+    },
+    {
+      "index": 1,
+      "builder_id": 0,
+      "action": "build",
+      "unit": "armwin",
+      "target_step": null,
+      "position": {
+        "x": 575.5296020507812,
+        "z": 703.1808471679688
+      },
+      "queued_s": 6.0,
+      "start_s": 6.5,
+      "finish_s": 11.8,
+      "complete": true
+    },
+    {
+      "index": 2,
+      "builder_id": 0,
+      "action": "build",
+      "unit": "armwin",
+      "target_step": null,
+      "position": {
+        "x": 673.6349487304688,
+        "z": 649.1498413085938
+      },
+      "queued_s": 12.0,
+      "start_s": 12.5,
+      "finish_s": 17.8,
+      "complete": true
+    },
+    {
+      "index": 3,
+      "builder_id": 0,
+      "action": "build",
+      "unit": "armlab",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 18.0,
+      "start_s": 19.5,
+      "finish_s": 36.166666666666664,
+      "complete": true
+    },
+    {
+      "index": 4,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 36.96666666666667,
+      "start_s": 36.96666666666667,
+      "finish_s": 42.266666666666666,
+      "complete": true
+    },
+    {
+      "index": 5,
+      "builder_id": 0,
+      "action": "build",
+      "unit": "armmex",
+      "target_step": null,
+      "position": {
+        "x": 672.0,
+        "z": 896.0
+      },
+      "queued_s": 36.5,
+      "start_s": 37.0,
+      "finish_s": 42.96666666666667,
+      "complete": true
+    },
+    {
+      "index": 6,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 42.63333333333333,
+      "start_s": 42.63333333333333,
+      "finish_s": 47.93333333333333,
+      "complete": true
+    },
+    {
+      "index": 7,
+      "builder_id": 0,
+      "action": "build",
+      "unit": "armwin",
+      "target_step": null,
+      "position": {
+        "x": 526.4769287109375,
+        "z": 730.1962890625
+      },
+      "queued_s": 43.0,
+      "start_s": 43.5,
+      "finish_s": 48.8,
+      "complete": true
+    },
+    {
+      "index": 8,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 48.2,
+      "start_s": 48.2,
+      "finish_s": 53.5,
+      "complete": true
+    },
+    {
+      "index": 9,
+      "builder_id": 0,
+      "action": "build",
+      "unit": "armwin",
+      "target_step": null,
+      "position": {
+        "x": 722.6876220703125,
+        "z": 622.1343994140625
+      },
+      "queued_s": 49.0,
+      "start_s": 49.5,
+      "finish_s": 54.8,
+      "complete": true
+    },
+    {
+      "index": 10,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 53.766666666666666,
+      "start_s": 53.766666666666666,
+      "finish_s": 59.06666666666667,
+      "complete": true
+    },
+    {
+      "index": 11,
+      "builder_id": 0,
+      "action": "build",
+      "unit": "armmex",
+      "target_step": null,
+      "position": {
+        "x": 528.0,
+        "z": 704.0
+      },
+      "queued_s": 55.0,
+      "start_s": 55.5,
+      "finish_s": 61.46666666666667,
+      "complete": true
+    },
+    {
+      "index": 12,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 59.333333333333336,
+      "start_s": 59.333333333333336,
+      "finish_s": 64.63333333333334,
+      "complete": true
+    },
+    {
+      "index": 13,
+      "builder_id": 0,
+      "action": "build",
+      "unit": "armsolar",
+      "target_step": null,
+      "position": {
+        "x": 477.4242858886719,
+        "z": 757.2117919921875
+      },
+      "queued_s": 61.5,
+      "start_s": 63.0,
+      "finish_s": 71.63333333333334,
+      "complete": true
+    },
+    {
+      "index": 14,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 65.06666666666666,
+      "start_s": 65.06666666666666,
+      "finish_s": 70.36666666666666,
+      "complete": true
+    },
+    {
+      "index": 15,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 70.63333333333334,
+      "start_s": 70.63333333333334,
+      "finish_s": 75.93333333333334,
+      "complete": true
+    },
+    {
+      "index": 16,
+      "builder_id": 0,
+      "action": "build",
+      "unit": "armmex",
+      "target_step": null,
+      "position": {
+        "x": 816.0,
+        "z": 736.0
+      },
+      "queued_s": 72.0,
+      "start_s": 73.0,
+      "finish_s": 78.96666666666667,
+      "complete": true
+    },
+    {
+      "index": 17,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 76.2,
+      "start_s": 76.2,
+      "finish_s": 81.5,
+      "complete": true
+    },
+    {
+      "index": 18,
+      "builder_id": 0,
+      "action": "build",
+      "unit": "armwin",
+      "target_step": null,
+      "position": {
+        "x": 597.5667724609375,
+        "z": 627.1126708984375
+      },
+      "queued_s": 79.0,
+      "start_s": 79.5,
+      "finish_s": 84.8,
+      "complete": true
+    },
+    {
+      "index": 19,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 81.76666666666667,
+      "start_s": 81.76666666666667,
+      "finish_s": 86.33333333333333,
+      "complete": true
+    },
+    {
+      "index": 20,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 19,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 86.0,
+      "start_s": 86.0,
+      "finish_s": 86.33333333333333,
+      "complete": true
+    },
+    {
+      "index": 21,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 86.6,
+      "start_s": 86.6,
+      "finish_s": 88.96666666666667,
+      "complete": true
+    },
+    {
+      "index": 22,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 21,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 87.5,
+      "start_s": 87.5,
+      "finish_s": 88.96666666666667,
+      "complete": true
+    },
+    {
+      "index": 23,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 89.23333333333333,
+      "start_s": 89.23333333333333,
+      "finish_s": 91.5,
+      "complete": true
+    },
+    {
+      "index": 24,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 23,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 90.0,
+      "start_s": 90.0,
+      "finish_s": 91.5,
+      "complete": true
+    },
+    {
+      "index": 25,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 91.76666666666667,
+      "start_s": 91.76666666666667,
+      "finish_s": 94.0,
+      "complete": true
+    },
+    {
+      "index": 26,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 25,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 92.5,
+      "start_s": 92.5,
+      "finish_s": 94.0,
+      "complete": true
+    },
+    {
+      "index": 27,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 94.26666666666667,
+      "start_s": 94.26666666666667,
+      "finish_s": 96.5,
+      "complete": true
+    },
+    {
+      "index": 28,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 27,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 95.0,
+      "start_s": 95.0,
+      "finish_s": 96.5,
+      "complete": true
+    },
+    {
+      "index": 29,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 96.76666666666667,
+      "start_s": 96.76666666666667,
+      "finish_s": 99.0,
+      "complete": true
+    },
+    {
+      "index": 30,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 29,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 97.5,
+      "start_s": 97.5,
+      "finish_s": 99.0,
+      "complete": true
+    },
+    {
+      "index": 31,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 99.26666666666667,
+      "start_s": 99.26666666666667,
+      "finish_s": 101.5,
+      "complete": true
+    },
+    {
+      "index": 32,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 31,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 100.0,
+      "start_s": 100.0,
+      "finish_s": 101.5,
+      "complete": true
+    },
+    {
+      "index": 33,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 101.76666666666667,
+      "start_s": 101.76666666666667,
+      "finish_s": 104.0,
+      "complete": true
+    },
+    {
+      "index": 34,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 33,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 102.5,
+      "start_s": 102.5,
+      "finish_s": 104.0,
+      "complete": true
+    },
+    {
+      "index": 35,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 104.26666666666667,
+      "start_s": 104.26666666666667,
+      "finish_s": 106.5,
+      "complete": true
+    },
+    {
+      "index": 36,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 35,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 105.0,
+      "start_s": 105.0,
+      "finish_s": 106.5,
+      "complete": true
+    },
+    {
+      "index": 37,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 106.76666666666667,
+      "start_s": 106.76666666666667,
+      "finish_s": 109.0,
+      "complete": true
+    },
+    {
+      "index": 38,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 37,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 107.5,
+      "start_s": 107.5,
+      "finish_s": 109.0,
+      "complete": true
+    },
+    {
+      "index": 39,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 109.26666666666667,
+      "start_s": 109.26666666666667,
+      "finish_s": 111.5,
+      "complete": true
+    },
+    {
+      "index": 40,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 39,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 110.0,
+      "start_s": 110.0,
+      "finish_s": 111.5,
+      "complete": true
+    },
+    {
+      "index": 41,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 111.76666666666667,
+      "start_s": 111.76666666666667,
+      "finish_s": 114.0,
+      "complete": true
+    },
+    {
+      "index": 42,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 41,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 112.5,
+      "start_s": 112.5,
+      "finish_s": 114.0,
+      "complete": true
+    },
+    {
+      "index": 43,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 114.26666666666667,
+      "start_s": 114.26666666666667,
+      "finish_s": 116.5,
+      "complete": true
+    },
+    {
+      "index": 44,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 43,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 115.0,
+      "start_s": 115.0,
+      "finish_s": 116.5,
+      "complete": true
+    },
+    {
+      "index": 45,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 116.76666666666667,
+      "start_s": 116.76666666666667,
+      "finish_s": 119.0,
+      "complete": true
+    },
+    {
+      "index": 46,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 45,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 117.5,
+      "start_s": 117.5,
+      "finish_s": 119.0,
+      "complete": true
+    },
+    {
+      "index": 47,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 119.26666666666667,
+      "start_s": 119.26666666666667,
+      "finish_s": 121.5,
+      "complete": true
+    },
+    {
+      "index": 48,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 47,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 120.0,
+      "start_s": 120.0,
+      "finish_s": 121.5,
+      "complete": true
+    },
+    {
+      "index": 49,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 121.76666666666667,
+      "start_s": 121.76666666666667,
+      "finish_s": 124.0,
+      "complete": true
+    },
+    {
+      "index": 50,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 49,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 122.5,
+      "start_s": 122.5,
+      "finish_s": 124.0,
+      "complete": true
+    },
+    {
+      "index": 51,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 124.26666666666667,
+      "start_s": 124.26666666666667,
+      "finish_s": 126.5,
+      "complete": true
+    },
+    {
+      "index": 52,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 51,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 125.0,
+      "start_s": 125.0,
+      "finish_s": 126.5,
+      "complete": true
+    },
+    {
+      "index": 53,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 126.76666666666667,
+      "start_s": 126.76666666666667,
+      "finish_s": 129.0,
+      "complete": true
+    },
+    {
+      "index": 54,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 53,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 127.5,
+      "start_s": 127.5,
+      "finish_s": 129.0,
+      "complete": true
+    },
+    {
+      "index": 55,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 129.26666666666668,
+      "start_s": 129.26666666666668,
+      "finish_s": 131.5,
+      "complete": true
+    },
+    {
+      "index": 56,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 55,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 130.0,
+      "start_s": 130.0,
+      "finish_s": 131.5,
+      "complete": true
+    },
+    {
+      "index": 57,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 131.76666666666668,
+      "start_s": 131.76666666666668,
+      "finish_s": 134.0,
+      "complete": true
+    },
+    {
+      "index": 58,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 57,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 132.5,
+      "start_s": 132.5,
+      "finish_s": 134.0,
+      "complete": true
+    },
+    {
+      "index": 59,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 134.26666666666668,
+      "start_s": 134.26666666666668,
+      "finish_s": 136.5,
+      "complete": true
+    },
+    {
+      "index": 60,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 59,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 135.0,
+      "start_s": 135.0,
+      "finish_s": 136.5,
+      "complete": true
+    },
+    {
+      "index": 61,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 136.76666666666668,
+      "start_s": 136.76666666666668,
+      "finish_s": 139.0,
+      "complete": true
+    },
+    {
+      "index": 62,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 61,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 137.5,
+      "start_s": 137.5,
+      "finish_s": 139.0,
+      "complete": true
+    },
+    {
+      "index": 63,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 139.26666666666668,
+      "start_s": 139.26666666666668,
+      "finish_s": 141.5,
+      "complete": true
+    },
+    {
+      "index": 64,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 63,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 140.0,
+      "start_s": 140.0,
+      "finish_s": 141.5,
+      "complete": true
+    },
+    {
+      "index": 65,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 141.76666666666668,
+      "start_s": 141.76666666666668,
+      "finish_s": 144.0,
+      "complete": true
+    },
+    {
+      "index": 66,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 65,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 142.5,
+      "start_s": 142.5,
+      "finish_s": 144.0,
+      "complete": true
+    },
+    {
+      "index": 67,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 144.26666666666668,
+      "start_s": 144.26666666666668,
+      "finish_s": 146.5,
+      "complete": true
+    },
+    {
+      "index": 68,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 67,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 145.0,
+      "start_s": 145.0,
+      "finish_s": 146.5,
+      "complete": true
+    },
+    {
+      "index": 69,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 146.76666666666668,
+      "start_s": 146.76666666666668,
+      "finish_s": 149.0,
+      "complete": true
+    },
+    {
+      "index": 70,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 69,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 147.5,
+      "start_s": 147.5,
+      "finish_s": 149.0,
+      "complete": true
+    },
+    {
+      "index": 71,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 149.26666666666668,
+      "start_s": 149.26666666666668,
+      "finish_s": 151.5,
+      "complete": true
+    },
+    {
+      "index": 72,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 71,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 150.0,
+      "start_s": 150.0,
+      "finish_s": 151.5,
+      "complete": true
+    },
+    {
+      "index": 73,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 151.76666666666668,
+      "start_s": 151.76666666666668,
+      "finish_s": 154.0,
+      "complete": true
+    },
+    {
+      "index": 74,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 73,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 152.5,
+      "start_s": 152.5,
+      "finish_s": 154.0,
+      "complete": true
+    },
+    {
+      "index": 75,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 154.26666666666668,
+      "start_s": 154.26666666666668,
+      "finish_s": 156.5,
+      "complete": true
+    },
+    {
+      "index": 76,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 75,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 155.0,
+      "start_s": 155.0,
+      "finish_s": 156.5,
+      "complete": true
+    },
+    {
+      "index": 77,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 156.76666666666668,
+      "start_s": 156.76666666666668,
+      "finish_s": 159.0,
+      "complete": true
+    },
+    {
+      "index": 78,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 77,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 157.5,
+      "start_s": 157.5,
+      "finish_s": 159.0,
+      "complete": true
+    },
+    {
+      "index": 79,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 159.26666666666668,
+      "start_s": 159.26666666666668,
+      "finish_s": 161.5,
+      "complete": true
+    },
+    {
+      "index": 80,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 79,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 160.0,
+      "start_s": 160.0,
+      "finish_s": 161.5,
+      "complete": true
+    },
+    {
+      "index": 81,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 161.76666666666668,
+      "start_s": 161.76666666666668,
+      "finish_s": 164.0,
+      "complete": true
+    },
+    {
+      "index": 82,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 81,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 162.5,
+      "start_s": 162.5,
+      "finish_s": 164.0,
+      "complete": true
+    },
+    {
+      "index": 83,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 164.26666666666668,
+      "start_s": 164.26666666666668,
+      "finish_s": 166.5,
+      "complete": true
+    },
+    {
+      "index": 84,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 83,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 165.0,
+      "start_s": 165.0,
+      "finish_s": 166.5,
+      "complete": true
+    },
+    {
+      "index": 85,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 166.76666666666668,
+      "start_s": 166.76666666666668,
+      "finish_s": 169.0,
+      "complete": true
+    },
+    {
+      "index": 86,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 85,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 167.5,
+      "start_s": 167.5,
+      "finish_s": 169.0,
+      "complete": true
+    },
+    {
+      "index": 87,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 169.26666666666668,
+      "start_s": 169.26666666666668,
+      "finish_s": 171.5,
+      "complete": true
+    },
+    {
+      "index": 88,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 87,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 170.0,
+      "start_s": 170.0,
+      "finish_s": 171.5,
+      "complete": true
+    },
+    {
+      "index": 89,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 171.76666666666668,
+      "start_s": 171.76666666666668,
+      "finish_s": 174.0,
+      "complete": true
+    },
+    {
+      "index": 90,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 89,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 172.5,
+      "start_s": 172.5,
+      "finish_s": 174.0,
+      "complete": true
+    },
+    {
+      "index": 91,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 174.26666666666668,
+      "start_s": 174.26666666666668,
+      "finish_s": 176.63333333333333,
+      "complete": true
+    },
+    {
+      "index": 92,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 91,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 175.0,
+      "start_s": 175.0,
+      "finish_s": 176.63333333333333,
+      "complete": true
+    },
+    {
+      "index": 93,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 177.03333333333333,
+      "start_s": 177.03333333333333,
+      "finish_s": 179.5,
+      "complete": true
+    },
+    {
+      "index": 94,
+      "builder_id": 0,
+      "action": "assist",
+      "unit": "armflea",
+      "target_step": 93,
+      "position": {
+        "x": 661.327392578125,
+        "z": 783.9736328125
+      },
+      "queued_s": 178.0,
+      "start_s": 178.0,
+      "finish_s": 179.5,
+      "complete": true
+    },
+    {
+      "index": 95,
+      "builder_id": 4,
+      "action": "build",
+      "unit": "armflea",
+      "target_step": null,
+      "position": {
+        "x": 764.48388671875,
+        "z": 930.1881103515625
+      },
+      "queued_s": 179.76666666666668,
+      "start_s": 179.76666666666668,
+      "finish_s": 180.0,
+      "complete": false
+    }
+  ],
+  "samples": [
+    {
+      "t_s": 1.0,
+      "metal": 998.25,
+      "energy": 1013.59375,
+      "metal_storage": 1500.0,
+      "energy_storage": 1500.0,
+      "metal_income": 2.0,
+      "energy_income": 30.0,
+      "metal_usage": 3.75,
+      "energy_usage": 16.40625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 5.0
+    },
+    {
+      "t_s": 2.0,
+      "metal": 992.75,
+      "energy": 1010.78125,
+      "metal_storage": 1500.0,
+      "energy_storage": 1500.0,
+      "metal_income": 2.0,
+      "energy_income": 30.0,
+      "metal_usage": 7.5,
+      "energy_usage": 32.8125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 3.0,
+      "metal": 987.25,
+      "energy": 1007.96875,
+      "metal_storage": 1500.0,
+      "energy_storage": 1500.0,
+      "metal_income": 2.0,
+      "energy_income": 30.0,
+      "metal_usage": 7.5,
+      "energy_usage": 32.8125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 4.0,
+      "metal": 981.75,
+      "energy": 1005.15625,
+      "metal_storage": 1500.0,
+      "energy_storage": 1500.0,
+      "metal_income": 2.0,
+      "energy_income": 30.0,
+      "metal_usage": 7.5,
+      "energy_usage": 32.8125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 5.0,
+      "metal": 976.25,
+      "energy": 1002.34375,
+      "metal_storage": 1500.0,
+      "energy_storage": 1500.0,
+      "metal_income": 2.0,
+      "energy_income": 30.0,
+      "metal_usage": 7.5,
+      "energy_usage": 32.8125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 6.0,
+      "metal": 972.0000610351562,
+      "energy": 1005.000244140625,
+      "metal_storage": 1500.0,
+      "energy_storage": 1500.5,
+      "metal_income": 2.0,
+      "energy_income": 30.0,
+      "metal_usage": 6.24993896484375,
+      "energy_usage": 27.343482971191406,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 8.333333015441895
+    },
+    {
+      "t_s": 7.0,
+      "metal": 970.2500610351562,
+      "energy": 1030.493896484375,
+      "metal_storage": 1500.0,
+      "energy_storage": 1500.5,
+      "metal_income": 2.0,
+      "energy_income": 41.900001525878906,
+      "metal_usage": 3.75,
+      "energy_usage": 16.40625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 5.0
+    },
+    {
+      "t_s": 8.0,
+      "metal": 964.7500610351562,
+      "energy": 1039.581298828125,
+      "metal_storage": 1500.0,
+      "energy_storage": 1500.5,
+      "metal_income": 2.0,
+      "energy_income": 41.900001525878906,
+      "metal_usage": 7.5,
+      "energy_usage": 32.8125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 9.0,
+      "metal": 959.2500610351562,
+      "energy": 1048.668701171875,
+      "metal_storage": 1500.0,
+      "energy_storage": 1500.5,
+      "metal_income": 2.0,
+      "energy_income": 41.900001525878906,
+      "metal_usage": 7.5,
+      "energy_usage": 32.8125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 10.0,
+      "metal": 953.7500610351562,
+      "energy": 1057.756103515625,
+      "metal_storage": 1500.0,
+      "energy_storage": 1500.5,
+      "metal_income": 2.0,
+      "energy_income": 41.900001525878906,
+      "metal_usage": 7.5,
+      "energy_usage": 32.8125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 11.0,
+      "metal": 948.2500610351562,
+      "energy": 1066.843505859375,
+      "metal_storage": 1500.0,
+      "energy_storage": 1500.5,
+      "metal_income": 2.0,
+      "energy_income": 41.900001525878906,
+      "metal_usage": 7.5,
+      "energy_usage": 32.8125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 12.0,
+      "metal": 944.0001220703125,
+      "energy": 1081.39990234375,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.0,
+      "metal_income": 2.0,
+      "energy_income": 41.900001525878906,
+      "metal_usage": 6.24993896484375,
+      "energy_usage": 27.343482971191406,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 8.333333015441895
+    },
+    {
+      "t_s": 13.0,
+      "metal": 942.2501220703125,
+      "energy": 1118.79345703125,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.0,
+      "metal_income": 2.0,
+      "energy_income": 53.80000305175781,
+      "metal_usage": 3.75,
+      "energy_usage": 16.40625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 5.0
+    },
+    {
+      "t_s": 14.0,
+      "metal": 936.7501220703125,
+      "energy": 1139.78076171875,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.0,
+      "metal_income": 2.0,
+      "energy_income": 53.80000305175781,
+      "metal_usage": 7.5,
+      "energy_usage": 32.8125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 15.0,
+      "metal": 931.2501220703125,
+      "energy": 1160.76806640625,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.0,
+      "metal_income": 2.0,
+      "energy_income": 53.80000305175781,
+      "metal_usage": 7.5,
+      "energy_usage": 32.8125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 16.0,
+      "metal": 925.7501220703125,
+      "energy": 1181.75537109375,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.0,
+      "metal_income": 2.0,
+      "energy_income": 53.80000305175781,
+      "metal_usage": 7.5,
+      "energy_usage": 32.8125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 17.0,
+      "metal": 920.2501220703125,
+      "energy": 1202.74267578125,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.0,
+      "metal_income": 2.0,
+      "energy_income": 53.80000305175781,
+      "metal_usage": 7.5,
+      "energy_usage": 32.8125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 18.0,
+      "metal": 916.0001831054688,
+      "energy": 1229.198974609375,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 53.80000305175781,
+      "metal_usage": 6.24993896484375,
+      "energy_usage": 27.343482971191406,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 8.333333015441895
+    },
+    {
+      "t_s": 19.0,
+      "metal": 918.0001831054688,
+      "energy": 1294.898681640625,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 0.0,
+      "energy_usage": 0.0,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 0.0
+    },
+    {
+      "t_s": 20.0,
+      "metal": 905.0001831054688,
+      "energy": 1332.0980224609375,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 15.0,
+      "energy_usage": 28.499996185302734,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 5.0
+    },
+    {
+      "t_s": 21.0,
+      "metal": 877.0001831054688,
+      "energy": 1340.7969970703125,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 22.0,
+      "metal": 849.0001831054688,
+      "energy": 1349.4959716796875,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 23.0,
+      "metal": 821.0001831054688,
+      "energy": 1358.1949462890625,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 24.0,
+      "metal": 793.0001831054688,
+      "energy": 1366.8939208984375,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 25.0,
+      "metal": 765.0001831054688,
+      "energy": 1375.5928955078125,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 26.0,
+      "metal": 737.0001831054688,
+      "energy": 1384.2918701171875,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 27.0,
+      "metal": 709.0001831054688,
+      "energy": 1392.9908447265625,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 28.0,
+      "metal": 681.0001831054688,
+      "energy": 1401.6898193359375,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 29.0,
+      "metal": 653.0001831054688,
+      "energy": 1410.3887939453125,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 30.0,
+      "metal": 625.0001831054688,
+      "energy": 1419.0877685546875,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 31.0,
+      "metal": 597.0001831054688,
+      "energy": 1427.7867431640625,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 32.0,
+      "metal": 569.0001831054688,
+      "energy": 1436.4857177734375,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 33.0,
+      "metal": 541.0001831054688,
+      "energy": 1445.1846923828125,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 34.0,
+      "metal": 513.0001831054688,
+      "energy": 1453.8836669921875,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 35.0,
+      "metal": 485.00018310546875,
+      "energy": 1462.5826416015625,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 36.0,
+      "metal": 457.00018310546875,
+      "energy": 1471.2816162109375,
+      "metal_storage": 1500.0,
+      "energy_storage": 1501.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 30.0,
+      "energy_usage": 57.00001525878906,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 300.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 37.0,
+      "metal": 453.86602783203125,
+      "energy": 1525.6007080078125,
+      "metal_storage": 1600.0,
+      "energy_storage": 1601.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 5.134140491485596,
+      "energy_usage": 11.380492210388184,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 2.1666667461395264
+    },
+    {
+      "t_s": 38.0,
+      "metal": 443.59521484375,
+      "energy": 1451.7154541015625,
+      "metal_storage": 1600.0,
+      "energy_storage": 1601.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 12.270833969116211,
+      "energy_usage": 139.58334350585938,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 39.0,
+      "metal": 433.32440185546875,
+      "energy": 1377.8302001953125,
+      "metal_storage": 1600.0,
+      "energy_storage": 1601.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 12.270833969116211,
+      "energy_usage": 139.58334350585938,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 40.0,
+      "metal": 423.0535888671875,
+      "energy": 1303.9449462890625,
+      "metal_storage": 1600.0,
+      "energy_storage": 1601.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 12.270833969116211,
+      "energy_usage": 139.58334350585938,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 41.0,
+      "metal": 412.78277587890625,
+      "energy": 1230.0596923828125,
+      "metal_storage": 1600.0,
+      "energy_storage": 1601.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 12.270833969116211,
+      "energy_usage": 139.58334350585938,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 42.0,
+      "metal": 402.511962890625,
+      "energy": 1156.1744384765625,
+      "metal_storage": 1600.0,
+      "energy_storage": 1601.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 12.270833969116211,
+      "energy_usage": 139.58334350585938,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 43.0,
+      "metal": 393.5538330078125,
+      "energy": 1101.0406494140625,
+      "metal_storage": 1650.0,
+      "energy_storage": 1601.5,
+      "metal_income": 2.0,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 10.95820426940918,
+      "energy_usage": 120.83191680908203,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 13.333333015441895
+    },
+    {
+      "t_s": 44.0,
+      "metal": 389.69915771484375,
+      "energy": 1091.0841064453125,
+      "metal_storage": 1650.0,
+      "energy_storage": 1601.5,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 7.687499046325684,
+      "energy_usage": 75.65625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 45.0,
+      "metal": 382.094482421875,
+      "energy": 1064.7213134765625,
+      "metal_storage": 1650.0,
+      "energy_storage": 1601.5,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 11.437501907348633,
+      "energy_usage": 92.0625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 46.0,
+      "metal": 374.48980712890625,
+      "energy": 1038.3585205078125,
+      "metal_storage": 1650.0,
+      "energy_storage": 1601.5,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 11.437501907348633,
+      "energy_usage": 92.0625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 47.0,
+      "metal": 366.8851318359375,
+      "energy": 1011.9957275390625,
+      "metal_storage": 1650.0,
+      "energy_storage": 1601.5,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 11.437501907348633,
+      "energy_usage": 92.0625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 48.0,
+      "metal": 359.4117431640625,
+      "energy": 987.508544921875,
+      "metal_storage": 1650.0,
+      "energy_storage": 1601.5,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 11.306219100952148,
+      "energy_usage": 90.18704223632812,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 14.833333015441895
+    },
+    {
+      "t_s": 49.0,
+      "metal": 353.84466552734375,
+      "energy": 977.8651123046875,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.0,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 65.70000457763672,
+      "metal_usage": 9.399940490722656,
+      "energy_usage": 75.3434829711914,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 12.333333015441895
+    },
+    {
+      "t_s": 50.0,
+      "metal": 349.989990234375,
+      "energy": 979.8089599609375,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.0,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 77.5999984741211,
+      "metal_usage": 7.687499046325684,
+      "energy_usage": 75.65625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 51.0,
+      "metal": 342.38531494140625,
+      "energy": 965.3465576171875,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.0,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 77.5999984741211,
+      "metal_usage": 11.437501907348633,
+      "energy_usage": 92.0625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 52.0,
+      "metal": 334.7806396484375,
+      "energy": 950.8841552734375,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.0,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 77.5999984741211,
+      "metal_usage": 11.437501907348633,
+      "energy_usage": 92.0625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 53.0,
+      "metal": 327.17596435546875,
+      "energy": 936.4217529296875,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.0,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 77.5999984741211,
+      "metal_usage": 11.437501907348633,
+      "energy_usage": 92.0625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 54.0,
+      "metal": 320.4901123046875,
+      "energy": 935.0848388671875,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.0,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 77.5999984741211,
+      "metal_usage": 10.518719673156738,
+      "energy_usage": 78.93704223632812,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 13.833333015441895
+    },
+    {
+      "t_s": 55.0,
+      "metal": 314.135498046875,
+      "energy": 932.0414428710938,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.5,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 83.54999542236328,
+      "metal_usage": 10.187440872192383,
+      "energy_usage": 86.5934829711914,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 13.333333015441895
+    },
+    {
+      "t_s": 56.0,
+      "metal": 309.8642578125,
+      "energy": 920.625,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.5,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 8.104164123535156,
+      "energy_usage": 100.91667938232422,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 57.0,
+      "metal": 301.42645263671875,
+      "energy": 867.5419921875,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.5,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 12.270833969116211,
+      "energy_usage": 142.5833282470703,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 58.0,
+      "metal": 292.9886474609375,
+      "energy": 814.458984375,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.5,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 12.270833969116211,
+      "energy_usage": 142.5833282470703,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 59.0,
+      "metal": 284.55084228515625,
+      "energy": 761.3759765625,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.5,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 12.270833969116211,
+      "energy_usage": 142.5833282470703,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 60.0,
+      "metal": 277.0318603515625,
+      "energy": 721.4183959960938,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.5,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 11.35205078125,
+      "energy_usage": 129.4578857421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 13.833333015441895
+    },
+    {
+      "t_s": 61.0,
+      "metal": 268.59405517578125,
+      "energy": 668.3353881835938,
+      "metal_storage": 1650.0,
+      "energy_storage": 1602.5,
+      "metal_income": 3.8330001831054688,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 12.270833969116211,
+      "energy_usage": 142.5833282470703,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 62.0,
+      "metal": 265.24139404296875,
+      "energy": 655.419921875,
+      "metal_storage": 1700.0,
+      "energy_storage": 1602.5,
+      "metal_income": 4.751500129699707,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 8.104065895080566,
+      "energy_usage": 102.41569519042969,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 63.0,
+      "metal": 266.97369384765625,
+      "energy": 682.6700439453125,
+      "metal_storage": 1700.0,
+      "energy_storage": 1602.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 3.9374988079071045,
+      "energy_usage": 62.25,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 5.0
+    },
+    {
+      "t_s": 64.0,
+      "metal": 250.8211669921875,
+      "energy": 709.920166015625,
+      "metal_storage": 1700.0,
+      "energy_storage": 1602.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 21.822120666503906,
+      "energy_usage": 62.25,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 65.0,
+      "metal": 235.9812774658203,
+      "energy": 755.9207153320312,
+      "metal_storage": 1700.0,
+      "energy_storage": 1602.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 20.509584426879883,
+      "energy_usage": 43.499542236328125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 13.333333015441895
+    },
+    {
+      "t_s": 66.0,
+      "metal": 220.09129333496094,
+      "energy": 786.9208374023438,
+      "metal_storage": 1700.0,
+      "energy_storage": 1602.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 21.559619903564453,
+      "energy_usage": 58.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 14.666666984558105
+    },
+    {
+      "t_s": 67.0,
+      "metal": 203.9387969970703,
+      "energy": 814.1709594726562,
+      "metal_storage": 1700.0,
+      "energy_storage": 1602.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 21.822120666503906,
+      "energy_usage": 62.25,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 68.0,
+      "metal": 187.7863006591797,
+      "energy": 841.4210815429688,
+      "metal_storage": 1700.0,
+      "energy_storage": 1602.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 21.822120666503906,
+      "energy_usage": 62.25,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 69.0,
+      "metal": 171.63380432128906,
+      "energy": 868.6712036132812,
+      "metal_storage": 1700.0,
+      "energy_storage": 1602.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 21.822120666503906,
+      "energy_usage": 62.25,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 70.0,
+      "metal": 155.48130798339844,
+      "energy": 895.9213256835938,
+      "metal_storage": 1700.0,
+      "energy_storage": 1602.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 21.822120666503906,
+      "energy_usage": 62.25,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 71.0,
+      "metal": 140.2476348876953,
+      "energy": 936.2969360351562,
+      "metal_storage": 1700.0,
+      "energy_storage": 1602.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 89.49999237060547,
+      "metal_usage": 20.903337478637695,
+      "energy_usage": 49.124542236328125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 13.833333015441895
+    },
+    {
+      "t_s": 72.0,
+      "metal": 130.05718994140625,
+      "energy": 973.5470581054688,
+      "metal_storage": 1700.0,
+      "energy_storage": 1652.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 99.49999237060547,
+      "metal_usage": 15.86014461517334,
+      "energy_usage": 62.25,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 11.666666984558105
+    },
+    {
+      "t_s": 73.0,
+      "metal": 131.78952026367188,
+      "energy": 1020.7969970703125,
+      "metal_storage": 1700.0,
+      "energy_storage": 1652.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 3.9374988079071045,
+      "energy_usage": 62.25,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 5.0
+    },
+    {
+      "t_s": 74.0,
+      "metal": 125.188720703125,
+      "energy": 984.7129516601562,
+      "metal_storage": 1700.0,
+      "energy_storage": 1652.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 12.270833969116211,
+      "energy_usage": 145.5833282470703,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 75.0,
+      "metal": 118.58790588378906,
+      "energy": 948.6299438476562,
+      "metal_storage": 1700.0,
+      "energy_storage": 1652.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 12.270833969116211,
+      "energy_usage": 145.5833282470703,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 76.0,
+      "metal": 112.11837005615234,
+      "energy": 914.4224243164062,
+      "metal_storage": 1700.0,
+      "energy_storage": 1652.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 12.139551162719727,
+      "energy_usage": 143.70787048339844,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 14.833333015441895
+    },
+    {
+      "t_s": 77.0,
+      "metal": 106.30504608154297,
+      "energy": 889.5894165039062,
+      "metal_storage": 1700.0,
+      "energy_storage": 1652.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 11.483333587646484,
+      "energy_usage": 134.33334350585938,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 14.0
+    },
+    {
+      "t_s": 78.0,
+      "metal": 99.70423126220703,
+      "energy": 853.5064086914062,
+      "metal_storage": 1700.0,
+      "energy_storage": 1652.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 12.270833969116211,
+      "energy_usage": 145.5833282470703,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 79.0,
+      "metal": 93.103515625,
+      "energy": 817.4243774414062,
+      "metal_storage": 1750.0,
+      "energy_storage": 1652.5,
+      "metal_income": 5.670000076293945,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 12.270736694335938,
+      "energy_usage": 145.5823516845703,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 80.0,
+      "metal": 92.92506408691406,
+      "energy": 845.2682495117188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1652.5,
+      "metal_income": 7.508999824523926,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 7.687499046325684,
+      "energy_usage": 81.65625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 81.0,
+      "metal": 88.99661254882812,
+      "energy": 856.7058715820312,
+      "metal_storage": 1750.0,
+      "energy_storage": 1652.5,
+      "metal_income": 7.508999824523926,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 11.437501907348633,
+      "energy_usage": 98.0625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 82.0,
+      "metal": 85.98693084716797,
+      "energy": 881.2689208984375,
+      "metal_storage": 1750.0,
+      "energy_storage": 1652.5,
+      "metal_income": 7.508999824523926,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 10.518719673156738,
+      "energy_usage": 84.93704223632812,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 13.833333015441895
+    },
+    {
+      "t_s": 83.0,
+      "metal": 82.05847930908203,
+      "energy": 892.70654296875,
+      "metal_storage": 1750.0,
+      "energy_storage": 1652.5,
+      "metal_income": 7.508999824523926,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 11.437501907348633,
+      "energy_usage": 98.0625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 84.0,
+      "metal": 78.1300277709961,
+      "energy": 904.1441650390625,
+      "metal_storage": 1750.0,
+      "energy_storage": 1652.5,
+      "metal_income": 7.508999824523926,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 11.437501907348633,
+      "energy_usage": 98.0625,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 85.0,
+      "metal": 75.4516372680664,
+      "energy": 921.05078125,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 109.49998474121094,
+      "metal_usage": 10.187440872192383,
+      "energy_usage": 92.5934829711914,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 13.333333015441895
+    },
+    {
+      "t_s": 86.0,
+      "metal": 79.02318572998047,
+      "energy": 977.200927734375,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.9374988079071045,
+      "energy_usage": 65.25,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 5.0
+    },
+    {
+      "t_s": 87.0,
+      "metal": 80.62602233886719,
+      "energy": 1005.226318359375,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 5.906230449676514,
+      "energy_usage": 93.37474060058594,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 7.5
+    },
+    {
+      "t_s": 88.0,
+      "metal": 80.26011657714844,
+      "energy": 1005.125732421875,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 89.0,
+      "metal": 76.21925354003906,
+      "energy": 952.5256958007812,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.54999828338623,
+      "energy_usage": 173.99998474121094,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 14.833333015441895
+    },
+    {
+      "t_s": 90.0,
+      "metal": 80.70954132080078,
+      "energy": 1021.80078125,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.018749475479126,
+      "energy_usage": 52.125,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 3.8333332538604736
+    },
+    {
+      "t_s": 91.0,
+      "metal": 76.40618133544922,
+      "energy": 965.4505615234375,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 92.0,
+      "metal": 76.82776641845703,
+      "energy": 976.6007080078125,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.087496280670166,
+      "energy_usage": 110.2499771118164,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.0
+    },
+    {
+      "t_s": 93.0,
+      "metal": 76.46186065673828,
+      "energy": 976.5006713867188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 94.0,
+      "metal": 72.15850067138672,
+      "energy": 920.1508178710938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 95.0,
+      "metal": 76.38629150390625,
+      "energy": 985.6759643554688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 96.0,
+      "metal": 72.08293151855469,
+      "energy": 929.3261108398438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 97.0,
+      "metal": 72.3732681274414,
+      "energy": 938.6012573242188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 98.0,
+      "metal": 72.00736236572266,
+      "energy": 938.5014038085938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 99.0,
+      "metal": 67.7040023803711,
+      "energy": 882.1515502929688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 100.0,
+      "metal": 71.93179321289062,
+      "energy": 947.6766967773438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 101.0,
+      "metal": 67.62843322753906,
+      "energy": 891.3268432617188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 102.0,
+      "metal": 67.91876983642578,
+      "energy": 900.6019897460938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 103.0,
+      "metal": 67.55286407470703,
+      "energy": 900.5021362304688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 104.0,
+      "metal": 63.24949645996094,
+      "energy": 844.1522827148438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 105.0,
+      "metal": 67.47728729248047,
+      "energy": 909.6774291992188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 106.0,
+      "metal": 63.173919677734375,
+      "energy": 853.3275756835938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 107.0,
+      "metal": 63.46418762207031,
+      "energy": 862.6027221679688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 108.0,
+      "metal": 63.09827423095703,
+      "energy": 862.5028686523438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 109.0,
+      "metal": 58.79480743408203,
+      "energy": 806.1530151367188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 110.0,
+      "metal": 63.02259063720703,
+      "energy": 871.6781616210938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 111.0,
+      "metal": 58.71912384033203,
+      "energy": 815.3283081054688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 112.0,
+      "metal": 59.00939178466797,
+      "energy": 824.6034545898438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 113.0,
+      "metal": 58.6434211730957,
+      "energy": 824.5036010742188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 114.0,
+      "metal": 54.33993911743164,
+      "energy": 768.1537475585938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 115.0,
+      "metal": 58.567718505859375,
+      "energy": 833.6788940429688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 116.0,
+      "metal": 54.26423645019531,
+      "energy": 777.3290405273438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 117.0,
+      "metal": 54.55450439453125,
+      "energy": 786.6041870117188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 118.0,
+      "metal": 54.188533782958984,
+      "energy": 786.5043334960938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 119.0,
+      "metal": 49.88505172729492,
+      "energy": 730.1544799804688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 120.0,
+      "metal": 54.112831115722656,
+      "energy": 795.6796264648438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 121.0,
+      "metal": 49.809349060058594,
+      "energy": 739.3297729492188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 122.0,
+      "metal": 50.09961700439453,
+      "energy": 748.6049194335938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 123.0,
+      "metal": 49.733646392822266,
+      "energy": 748.5050659179688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 124.0,
+      "metal": 45.4301643371582,
+      "energy": 692.1552124023438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 125.0,
+      "metal": 49.65794372558594,
+      "energy": 757.6803588867188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 126.0,
+      "metal": 45.354461669921875,
+      "energy": 701.3305053710938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 127.0,
+      "metal": 45.64472961425781,
+      "energy": 710.6056518554688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 128.0,
+      "metal": 45.27875900268555,
+      "energy": 710.5057983398438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 129.0,
+      "metal": 40.975276947021484,
+      "energy": 654.1559448242188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 130.0,
+      "metal": 45.20305633544922,
+      "energy": 719.6810913085938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 131.0,
+      "metal": 40.899574279785156,
+      "energy": 663.3312377929688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 132.0,
+      "metal": 41.189842224121094,
+      "energy": 672.6063842773438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 133.0,
+      "metal": 40.82387161254883,
+      "energy": 672.5065307617188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 134.0,
+      "metal": 36.520389556884766,
+      "energy": 616.1566772460938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 135.0,
+      "metal": 40.7481689453125,
+      "energy": 681.6818237304688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 136.0,
+      "metal": 36.44468688964844,
+      "energy": 625.3319702148438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 137.0,
+      "metal": 36.734954833984375,
+      "energy": 634.6071166992188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 138.0,
+      "metal": 36.36898422241211,
+      "energy": 634.5072631835938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 139.0,
+      "metal": 32.06550216674805,
+      "energy": 578.1574096679688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 140.0,
+      "metal": 36.29328155517578,
+      "energy": 643.6825561523438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 141.0,
+      "metal": 31.989797592163086,
+      "energy": 587.3327026367188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 142.0,
+      "metal": 32.28005599975586,
+      "energy": 596.6078491210938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 143.0,
+      "metal": 31.91408348083496,
+      "energy": 596.5079956054688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 144.0,
+      "metal": 27.610567092895508,
+      "energy": 540.1581420898438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 145.0,
+      "metal": 31.838329315185547,
+      "energy": 605.6832885742188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 146.0,
+      "metal": 27.53481101989746,
+      "energy": 549.3334350585938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 147.0,
+      "metal": 27.825044631958008,
+      "energy": 558.6085815429688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 148.0,
+      "metal": 27.45902442932129,
+      "energy": 558.5087280273438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 149.0,
+      "metal": 23.155492782592773,
+      "energy": 502.15887451171875,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 150.0,
+      "metal": 27.383237838745117,
+      "energy": 567.6840209960938,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 151.0,
+      "metal": 23.0797061920166,
+      "energy": 511.33416748046875,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 152.0,
+      "metal": 23.36993980407715,
+      "energy": 520.6093139648438,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 153.0,
+      "metal": 23.00391960144043,
+      "energy": 520.5094604492188,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 154.0,
+      "metal": 18.700387954711914,
+      "energy": 464.15960693359375,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 155.0,
+      "metal": 22.928133010864258,
+      "energy": 529.6847534179688,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 156.0,
+      "metal": 18.624601364135742,
+      "energy": 473.33489990234375,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 157.0,
+      "metal": 18.91483497619629,
+      "energy": 482.6100769042969,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 158.0,
+      "metal": 18.54881477355957,
+      "energy": 482.51019287109375,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 159.0,
+      "metal": 14.245287895202637,
+      "energy": 426.16033935546875,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 160.0,
+      "metal": 18.473033905029297,
+      "energy": 491.68548583984375,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 161.0,
+      "metal": 14.169507026672363,
+      "energy": 435.33563232421875,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 162.0,
+      "metal": 14.45975399017334,
+      "energy": 444.6108093261719,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 163.0,
+      "metal": 14.093737602233887,
+      "energy": 444.5109558105469,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 164.0,
+      "metal": 9.790231704711914,
+      "energy": 388.1611022949219,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 165.0,
+      "metal": 14.017976760864258,
+      "energy": 453.686279296875,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 166.0,
+      "metal": 9.714470863342285,
+      "energy": 397.33642578125,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 167.0,
+      "metal": 10.004719734191895,
+      "energy": 406.6116027832031,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 168.0,
+      "metal": 9.638711929321289,
+      "energy": 406.5117492675781,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 169.0,
+      "metal": 5.335211277008057,
+      "energy": 350.1618957519531,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 170.0,
+      "metal": 9.562956809997559,
+      "energy": 415.68707275390625,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 171.0,
+      "metal": 5.259456157684326,
+      "energy": 359.33721923828125,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 172.0,
+      "metal": 5.549712181091309,
+      "energy": 368.6123962402344,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.218745708465576,
+      "energy_usage": 112.12496948242188,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 9.166666984558105
+    },
+    {
+      "t_s": 173.0,
+      "metal": 5.183712959289551,
+      "energy": 368.5125427246094,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 7.874997138977051,
+      "energy_usage": 121.5,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 10.0
+    },
+    {
+      "t_s": 174.0,
+      "metal": 0.8802176713943481,
+      "energy": 312.1626892089844,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 175.0,
+      "metal": 5.107971668243408,
+      "energy": 377.6878662109375,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.28124737739563,
+      "energy_usage": 55.874969482421875,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.166666507720947
+    },
+    {
+      "t_s": 176.0,
+      "metal": 0.8044767379760742,
+      "energy": 321.3380126953125,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 177.0,
+      "metal": 2.0134785175323486,
+      "energy": 343.7381896972656,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 6.2999958992004395,
+      "energy_usage": 98.99996185302734,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 8.0
+    },
+    {
+      "t_s": 178.0,
+      "metal": 5.716230869293213,
+      "energy": 401.7633361816406,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 3.806248903274536,
+      "energy_usage": 63.375,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 4.833333492279053
+    },
+    {
+      "t_s": 179.0,
+      "metal": 1.4127368927001953,
+      "energy": 345.4134826660156,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 11.812499046325684,
+      "energy_usage": 177.75,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 15.0
+    },
+    {
+      "t_s": 180.0,
+      "metal": 2.621738910675049,
+      "energy": 367.81365966796875,
+      "metal_storage": 1750.0,
+      "energy_storage": 1653.0,
+      "metal_income": 7.508999824523926,
+      "energy_income": 121.39998626708984,
+      "metal_usage": 6.299996852874756,
+      "energy_usage": 98.9999771118164,
+      "metal_wasted": 0.0,
+      "energy_wasted": 0.0,
+      "build_power": 450.0,
+      "build_power_used": 8.0
+    }
+  ],
+  "tracks": [
+    {
+      "builder_id": 0,
+      "waypoints": [
+        {
+          "t_s": 0.0,
+          "x": 668.0,
+          "z": 755.0
+        },
+        {
+          "t_s": 18.0,
+          "x": 668.0,
+          "z": 755.0
+        },
+        {
+          "t_s": 18.566666666666666,
+          "x": 678.1592407226562,
+          "z": 773.4463500976562
+        },
+        {
+          "t_s": 61.5,
+          "x": 678.1592407226562,
+          "z": 773.4463500976562
+        },
+        {
+          "t_s": 62.266666666666666,
+          "x": 650.1445922851562,
+          "z": 771.1806640625
+        },
+        {
+          "t_s": 72.0,
+          "x": 650.1445922851562,
+          "z": 771.1806640625
+        },
+        {
+          "t_s": 72.06666666666666,
+          "x": 652.02099609375,
+          "z": 770.7826538085938
+        },
+        {
+          "t_s": 85.0,
+          "x": 652.02099609375,
+          "z": 770.7826538085938
+        },
+        {
+          "t_s": 85.43333333333334,
+          "x": 661.327392578125,
+          "z": 783.9736328125
+        }
+      ]
+    }
+  ],
+  "assumptions": [
+    "Frame-accurate model of the Recoil engine at 30 frames per second: staggered 0.5 s slow updates, income in half-second chunks, all-or-nothing build power per builder and frame.",
+    "A lab queues its next Tick only in its own slow update, and starts it when the previous Tick has left the build pad.",
+    "Nanos on fight/patrol help the nearest unit under construction in range after one slow update; nanos on guard need two.",
+    "The commander assists (guards) the first lab after its last build order.",
+    "Wind turbines make the map's average wind (BAR wind_functions table) all the time; the real wind changes.",
+    "The commander walks in a straight line at full speed; build positions are a fixed compact base layout, mexes nearest first.",
+    "No enemy, no reclaim, no unit losses; Ticks stay alive.",
+    "Plan: beam search."
+  ]
+}

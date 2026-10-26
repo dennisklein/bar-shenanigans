@@ -132,9 +132,23 @@ all the time.
 The video frames could not be read here (YouTube needs a sign-in from the
 build server), so the video's spreadsheet numbers are not compared yet.
 
-### Opener
+### Opener: All That Glitters, start P1, Ticks at 180 s
 
-See `results/` for the opener of the map that the search ran on.
+`openers/all_that_glitters_tickspam.json` (`mise run tickspam:search`).
+Wind 0 to 16 gives 11.9 E/s per turbine on average.
+
+| Plan | Commander builds | Ticks at 180 s |
+|---|---|---|
+| Beam search | wind x3, lab, mex, wind x2, mex, solar, mex, wind | **46** |
+| Lab first (baseline) | lab, wind x2, mex x2, wind x4 | 36 |
+| Eco first (baseline) | mex x2, wind x3, lab, wind x2, nano | 25 |
+
+- The lab is complete at 36 s, the first Tick at 42 s. After its last
+  build (85 s) the commander guards the lab: 150 + 300 build power.
+- No nano: a nano costs 3200 E, more than 10 Ticks, and does not pay back
+  in 3 minutes. At 300 s the search still uses no nano (89 Ticks).
+- The search gives the same result with beam width 128 and 512, and with
+  fight or guard nanos.
 
 ## Limits of the model
 
