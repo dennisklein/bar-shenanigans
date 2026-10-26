@@ -185,7 +185,15 @@ pub struct Step {
     /// Time at which the builder arrives in build range and starts to build.
     pub start_s: f64,
     /// Time at which the unit is complete (for `assist`: the builder stops).
+    /// For a step that is not complete, the horizon.
     pub finish_s: f64,
+    /// False if the step was still in progress at the horizon.
+    #[serde(default = "yes")]
+    pub complete: bool,
+}
+
+fn yes() -> bool {
+    true
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
@@ -318,6 +326,12 @@ mod tests {
     fn rejects_other_version() {
         let text = EXAMPLE.replacen("\"schema_version\": 1", "\"schema_version\": 2", 1);
         assert!(matches!(Opener::from_json(&text), Err(Error::Version(2))));
+    }
+
+    #[test]
+    fn complete_defaults_to_true() {
+        let opener = Opener::from_json(EXAMPLE).unwrap();
+        assert!(opener.steps.iter().all(|s| s.complete));
     }
 
     #[test]
