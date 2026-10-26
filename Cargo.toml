@@ -9,6 +9,7 @@ rust-version = "1.82"
 
 [workspace.dependencies]
 anyhow = "1"
+clap = { version = "4", features = ["derive"] }
 mlua = { version = "0.10", features = ["lua51", "vendored", "error-send", "serialize"] }
 serde = { version = "1", features = ["derive"] }
-serde_json = "1"
+serde_json = { version = "1", features = ["float_roundtrip"] }

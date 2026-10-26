@@ -9,6 +9,7 @@ rust-version.workspace = true
 [dependencies]
 anyhow.workspace = true
 bar-data = { path = "../bar-data" }
+clap.workspace = true
 mlua.workspace = true
 opener-format = { path = "../opener-format" }
 serde.workspace = true
